@@ -1,0 +1,2976 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUTURE-READY XI: Radar Kesiapan Karir & Rasionalisasi Kampus Impian</title>
+    <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Space Grotesk', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        canvasLight: '#F8FAFC',
+                        inkDark: '#0F172A',
+                        electricIndigo: '#4F46E5',
+                        cyberLime: '#BEF264',
+                        coralPink: '#FB7185',
+                        amberGold: '#FBBF24',
+                        skyPulse: '#38BDF8',
+                        mintPop: '#34D399'
+                    },
+                    boxShadow: {
+                        'neo': '5px 5px 0px 0px #0F172A',
+                        'neo-sm': '3px 3px 0px 0px #0F172A',
+                        'neo-lg': '8px 8px 0px 0px #0F172A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F4F6FB;
+            background-image: radial-gradient(#CBD5E1 1.3px, transparent 1.3px);
+            background-size: 22px 22px;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+
+        .neo-card {
+            background-color: #FFFFFF;
+            border: 2.5px solid #0F172A;
+            box-shadow: 5px 5px 0px 0px #0F172A;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .neo-btn {
+            border: 2.5px solid #0F172A;
+            box-shadow: 4px 4px 0px 0px #0F172A;
+            transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .neo-btn:hover:not(:disabled) {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0F172A;
+        }
+
+        .neo-btn:active:not(:disabled) {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px 0px #0F172A;
+        }
+
+        .neo-btn:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        .track-pill {
+            border: 2.5px solid #0F172A;
+            transition: all 0.16s ease;
+            cursor: pointer;
+        }
+
+        .track-pill.active {
+            background-color: #BEF264;
+            box-shadow: 4px 4px 0px 0px #0F172A;
+            transform: translate(-2px, -2px);
+        }
+
+        .likert-btn {
+            border: 2px solid #0F172A;
+            transition: all 0.14s ease;
+        }
+
+        .likert-btn.selected {
+            background-color: #4F46E5;
+            color: #FFFFFF;
+            box-shadow: 3px 3px 0px 0px #0F172A;
+            transform: translateY(-2px);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @media print {
+            body {
+                background: #FFFFFF !important;
+                background-image: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            #print-report-sheet {
+                display: block !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100% !important;
+            }
+            @page {
+                size: A4 portrait;
+                margin: 12mm;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between font-sans selection:bg-cyberLime selection:text-inkDark">
+
+    <!-- ========================================== -->
+    <!-- TOP NAVIGATION BAR                         -->
+    <!-- ========================================== -->
+    <header class="no-print w-full max-w-6xl mx-auto px-4 pt-4 pb-2 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3 bg-white px-4 py-2 rounded-2xl border-2.5 border-inkDark shadow-neo-sm">
+            <div class="w-9 h-9 rounded-xl bg-electricIndigo text-white flex items-center justify-center font-display font-bold text-lg border-2 border-inkDark">
+                🎯
+            </div>
+            <div>
+                <div class="flex items-center gap-2">
+                    <span class="font-display font-bold text-base sm:text-lg tracking-tight text-inkDark leading-none">FUTURE-READY XI</span>
+                    <span class="bg-cyberLime text-inkDark font-extrabold text-[10px] px-2 py-0.5 rounded-full border border-inkDark">BK KARIR</span>
+                </div>
+                <span class="text-[11px] font-semibold text-slate-500 block mt-0.5">Radar Kesiapan Karir & Rasionalisasi Studi Lanjut</span>
+            </div>
+        </div>
+
+        <!-- Stepper Progress Indicator -->
+        <div class="flex items-center gap-1.5 sm:gap-2 bg-white px-3 py-2 rounded-2xl border-2.5 border-inkDark shadow-neo-sm text-xs font-bold">
+            <span id="nav-step-1" class="px-2.5 py-1 rounded-lg bg-cyberLime border border-inkDark text-inkDark">1. Profil & Rapor</span>
+            <span class="text-slate-400">→</span>
+            <span id="nav-step-2" class="px-2.5 py-1 rounded-lg text-slate-500">2. Radar 24 Butir</span>
+            <span class="text-slate-400">→</span>
+            <span id="nav-step-3" class="px-2.5 py-1 rounded-lg text-slate-500">3. Hasil & File BK</span>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- MAIN APPLICATION CONTAINER                 -->
+    <!-- ========================================== -->
+    <main class="w-full max-w-6xl mx-auto px-4 py-4 flex-grow">
+
+        <!-- ======================================================= -->
+        <!-- STEP 1: ONBOARDING, PROFIL AKADEMIK & TARGET KAMPUS     -->
+        <!-- ======================================================= -->
+        <section id="step-1-section" class="animate-slide-up space-y-5">
+            <!-- Hero Bento Banner -->
+            <div class="neo-card rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-indigo-600 via-electricIndigo to-violet-700 text-white relative overflow-hidden">
+                <div class="hidden md:block absolute -right-10 -bottom-10 w-44 h-44 bg-cyberLime rounded-full border-3 border-inkDark opacity-90"></div>
+                <div class="hidden md:block absolute right-28 -top-8 w-20 h-20 bg-amberGold rounded-2xl rotate-12 border-2.5 border-inkDark"></div>
+
+                <div class="relative z-10 max-w-3xl">
+                    <span class="inline-flex items-center gap-1.5 bg-cyberLime text-inkDark font-extrabold text-xs px-3 py-1 rounded-full border-2 border-inkDark mb-3">
+                        <span>✨</span> KHUSUS PESERTA DIDIK KELAS XI • SEMESTER 3–4
+                    </span>
+                    <h1 class="font-display font-bold text-2xl sm:text-4xl leading-tight mb-2">
+                        Cek Seberapa Siap Kamu Menembus Kampus Impian!
+                    </h1>
+                    <p class="text-indigo-100 text-sm sm:text-base font-medium leading-relaxed">
+                        Masukkan nilai rapor Semester 1, 2, dan 3 secara terpisah, lengkapi portofolio prestasi, SAT & riset, uji 4 dimensi kesiapan karir, dan dapatkan <strong>rasionalisasi peluang PTN, Kedinasan, PTLN, maupun PTS</strong> lengkap dengan berkas resmi Guru BK.
+                    </p>
+                </div>
+            </div>
+
+            <form id="profile-form" onsubmit="goToStep2(event)" class="space-y-5">
+                <!-- Bento Grid: Identitas & Data Rapor -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                    
+                    <!-- Kolom Kiri (5 Kolom): Identitas Siswa & Sekolah -->
+                    <div class="lg:col-span-5 neo-card rounded-3xl p-5 sm:p-6 space-y-4">
+                        <div class="flex items-center justify-between border-b-2 border-slate-100 pb-3">
+                            <h2 class="font-display font-bold text-lg text-inkDark flex items-center gap-2">
+                                <span>🪪</span> Identitas Peserta Didik
+                            </h2>
+                            <span class="text-[11px] font-bold bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-300">Wajib Diisi</span>
+                        </div>
+
+                        <div>
+                            <label for="input-name" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Nama Lengkap Siswa *</label>
+                            <input type="text" id="input-name" required maxlength="45" placeholder="Contoh: Muhammad Rayhan Pratama"
+                                class="w-full px-3.5 py-2.5 rounded-xl border-2 border-inkDark font-semibold text-sm focus:outline-none focus:ring-4 focus:ring-cyberLime">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label for="input-class" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Kelas XI *</label>
+                                <input type="text" id="input-class" required value="XI-A" maxlength="18" placeholder="Contoh: XI-A / XI-MIPA 1"
+                                    class="w-full px-3.5 py-2.5 rounded-xl border-2 border-inkDark font-bold text-sm uppercase focus:outline-none focus:ring-4 focus:ring-cyberLime">
+                            </div>
+                            <div>
+                                <label for="input-major-track" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Rumpun / Peminatan</label>
+                                <select id="input-major-track" class="w-full px-3 py-2.5 rounded-xl border-2 border-inkDark font-bold text-sm bg-white focus:outline-none">
+                                    <option value="Saintek / MIPA">Saintek / MIPA</option>
+                                    <option value="Soshum / IPS">Soshum / IPS</option>
+                                    <option value="Bahasa & Humaniora">Bahasa & Budaya</option>
+                                    <option value="Kurikulum Merdeka (Campuran)">Kurikulum Merdeka</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="input-school" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Sekolah / Madrasah *</label>
+                            <input type="text" id="input-school" required value="MAN 2 Kota Malang" maxlength="50"
+                                class="w-full px-3.5 py-2.5 rounded-xl border-2 border-inkDark font-semibold text-sm bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-cyberLime">
+                        </div>
+
+                        <div>
+                            <label for="input-counselor" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Guru Bimbingan & Konseling *</label>
+                            <input type="text" id="input-counselor" required value="Endah Kurniawati, S.Pd" maxlength="50"
+                                class="w-full px-3.5 py-2.5 rounded-xl border-2 border-inkDark font-semibold text-sm bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-cyberLime">
+                        </div>
+
+                        <!-- Ringkasan Cepat Ekosistem Target -->
+                        <div class="bg-amber-50 border-2 border-inkDark rounded-2xl p-3.5 space-y-1.5">
+                            <div class="text-xs font-extrabold text-amber-900 flex items-center gap-1.5">
+                                <span>💡</span> Panduan Pengisian Rapor & Portofolio:
+                            </div>
+                            <p class="text-[11px] text-slate-700 leading-relaxed">
+                                Masukkan rata-rata nilai pengetahuan/akhir tiap semester (skala 0–100). Jika memiliki skor <strong>SAT</strong> atau <strong>Riset/KIR/OPSI/MYRES</strong>, lengkapi pada kolom portofolio di sebelah kanan untuk kalkulasi rasionalisasi yang lebih presisi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan (7 Kolom): Nilai Rapor Terpisah Sem 1-3 & Portofolio -->
+                    <div class="lg:col-span-7 neo-card rounded-3xl p-5 sm:p-6 space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-100 pb-3">
+                            <h2 class="font-display font-bold text-lg text-inkDark flex items-center gap-2">
+                                <span>📈</span> Nilai Rapor Terpisah (Sem 1–3) & Portofolio
+                            </h2>
+                            <div class="flex items-center gap-1.5">
+                                <button type="button" onclick="fillSampleRapor()" class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-cyberLime border border-inkDark transition cursor-pointer">
+                                    ✨ Contoh Nilai
+                                </button>
+                                <button type="button" onclick="clearRaporInputs()" class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-rose-100 border border-inkDark transition cursor-pointer">
+                                    🧹 Kosongkan
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Kotak Kalkulator Rapor Semester 1, 2, 3 + Kartu Rata-rata Real-time + Grafik Mini -->
+                        <div class="bg-slate-50 p-4 rounded-2xl border-2 border-inkDark space-y-3.5">
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-3.5 items-stretch">
+                                <!-- 3 Input Semester (7 Kolom) -->
+                                <div class="md:col-span-7 flex flex-col justify-between space-y-2.5">
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <div>
+                                            <label for="raporSem1" class="block text-[11px] font-extrabold text-slate-700 mb-1">
+                                                Sem 1 (X Ganjil) *
+                                            </label>
+                                            <input type="text" id="raporSem1" inputmode="decimal" required value="86.50" placeholder="0 - 100"
+                                                oninput="updateRaporAnalytics()" onchange="updateRaporAnalytics()" onblur="formatRaporFieldOnBlur('raporSem1')"
+                                                class="w-full px-2.5 py-2 rounded-xl border-2 border-inkDark bg-white font-display font-bold text-base sm:text-lg text-center text-inkDark focus:outline-none focus:ring-4 focus:ring-cyberLime transition">
+                                        </div>
+                                        <div>
+                                            <label for="raporSem2" class="block text-[11px] font-extrabold text-slate-700 mb-1">
+                                                Sem 2 (X Genap) *
+                                            </label>
+                                            <input type="text" id="raporSem2" inputmode="decimal" required value="88.00" placeholder="0 - 100"
+                                                oninput="updateRaporAnalytics()" onchange="updateRaporAnalytics()" onblur="formatRaporFieldOnBlur('raporSem2')"
+                                                class="w-full px-2.5 py-2 rounded-xl border-2 border-inkDark bg-white font-display font-bold text-base sm:text-lg text-center text-inkDark focus:outline-none focus:ring-4 focus:ring-cyberLime transition">
+                                        </div>
+                                        <div>
+                                            <label for="raporSem3" class="block text-[11px] font-extrabold text-slate-700 mb-1">
+                                                Sem 3 (XI Ganjil) *
+                                            </label>
+                                            <input type="text" id="raporSem3" inputmode="decimal" required value="89.75" placeholder="0 - 100"
+                                                oninput="updateRaporAnalytics()" onchange="updateRaporAnalytics()" onblur="formatRaporFieldOnBlur('raporSem3')"
+                                                class="w-full px-2.5 py-2 rounded-xl border-2 border-inkDark bg-white font-display font-bold text-base sm:text-lg text-center text-electricIndigo focus:outline-none focus:ring-4 focus:ring-cyberLime transition">
+                                        </div>
+                                    </div>
+
+                                    <!-- Status Delta & Validasi -->
+                                    <div id="rapor-validation-alert" class="hidden text-[11px] font-bold text-rose-700 bg-rose-100 border border-rose-400 px-2.5 py-1 rounded-lg">
+                                        ⚠️ Masukkan angka valid antara 0 hingga 100 (boleh pakai titik atau koma).
+                                    </div>
+
+                                    <div class="bg-white px-3 py-2 rounded-xl border border-inkDark flex items-center justify-between text-xs">
+                                        <span class="font-bold text-slate-600">Selisih Tren (Sem 1 → 3):</span>
+                                        <span id="live-rapor-delta-badge" class="font-display font-bold px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-400">
+                                            ▲ +3.25 Naik Konsisten
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Kartu Rata-rata Kumulatif Semester 1-3 (5 Kolom) -->
+                                <div class="md:col-span-5 bg-inkDark text-white rounded-2xl p-3.5 border-2 border-inkDark shadow-neo-sm flex flex-col items-center justify-center text-center">
+                                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-300">RATA-RATA RAPOR (SEM 1–3)</span>
+                                    <div id="live-rapor-avg" class="font-display font-bold text-3xl sm:text-4xl text-cyberLime my-0.5">
+                                        88.08
+                                    </div>
+                                    <span id="live-rapor-quality-badge" class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-emeraldPop text-inkDark">
+                                        Kompetitif (85–89.99)
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Grafik Garis Tren Nilai SVG Interaktif di Step 1 -->
+                            <div class="bg-white rounded-xl border border-inkDark p-2.5 flex flex-col sm:flex-row items-center gap-3">
+                                <div class="w-full sm:w-3/5">
+                                    <svg id="step1-trend-svg" viewBox="0 0 280 96" class="w-full h-auto block"></svg>
+                                </div>
+                                <div class="w-full sm:w-2/5 text-[11px] text-slate-600 space-y-1 border-t sm:border-t-0 sm:border-l border-slate-200 pt-2 sm:pt-0 sm:pl-3">
+                                    <div class="font-extrabold text-inkDark">Legenda Grafik Rapor:</div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="w-3 h-1 bg-electricIndigo inline-block rounded"></span>
+                                        <span>Kurva Nilai Tiap Semester</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="w-3 h-0.5 border-t-2 border-dashed border-rose-500 inline-block"></span>
+                                        <span>Garis Rata-rata (<strong id="legend-avg-text" class="text-inkDark">88.08</strong>)</span>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 leading-tight pt-0.5">
+                                        Tren naik stabil memberi bobot tambahan pada rasionalisasi SNBP & Beasiswa.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Faktor Pendukung Spesifik -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                            <div>
+                                <label for="input-subjects" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">2 Mapel Pendukung Terkuat *</label>
+                                <select id="input-subjects" class="w-full px-3 py-2.5 rounded-xl border-2 border-inkDark font-semibold text-xs sm:text-sm bg-white focus:outline-none">
+                                    <option value="Matematika & Fisika / Informatika">Matematika & Fisika / Informatika</option>
+                                    <option value="Biologi & Kimia">Biologi & Kimia</option>
+                                    <option value="Ekonomi, Sosiologi & Geografi">Ekonomi, Sosiologi & Geografi</option>
+                                    <option value="Bahasa Inggris & Sastra">Bahasa Inggris & Sastra</option>
+                                    <option value="Informatika / TIK & Matematika">Informatika / TIK & Matematika</option>
+                                    <option value="Olahraga, Kesehatan & Biologi">Olahraga, Kesehatan & Biologi</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="input-subject-avg" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Rata-rata 2 Mapel Pendukung *</label>
+                                <input type="text" id="input-subject-avg" inputmode="decimal" required value="90.50" placeholder="Contoh: 90.50"
+                                    onblur="formatGenericScoreOnBlur('input-subject-avg', 88)"
+                                    class="w-full px-3.5 py-2.5 rounded-xl border-2 border-inkDark font-bold text-xs sm:text-sm bg-white focus:outline-none focus:ring-4 focus:ring-cyberLime">
+                            </div>
+
+                            <div>
+                                <label for="input-achievement" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Prestasi Akademik / Non-Akademik</label>
+                                <select id="input-achievement" class="w-full px-3 py-2.5 rounded-xl border-2 border-inkDark font-semibold text-xs sm:text-sm bg-white focus:outline-none">
+                                    <option value="0">Belum ada sertifikat lomba</option>
+                                    <option value="1">Tingkat Sekolah / Kecamatan</option>
+                                    <option value="2">Tingkat Kota / Kabupaten (Juara 1-3)</option>
+                                    <option value="3">Tingkat Provinsi (Juara / Finalis)</option>
+                                    <option value="4">Tingkat Nasional (OSN/KSM/O2SN/FLS2N)</option>
+                                    <option value="5">Tingkat Internasional</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="input-language" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Literasi Bahasa Asing (IELTS/TOEFL/HSK/JLPT)</label>
+                                <select id="input-language" class="w-full px-3 py-2.5 rounded-xl border-2 border-inkDark font-semibold text-xs sm:text-sm bg-white focus:outline-none">
+                                    <option value="1">Dasar (Pelajaran Sekolah)</option>
+                                    <option value="2">Menengah (Aktif pasif, belum tes resmi)</option>
+                                    <option value="3">Mahir (Setara TOEFL ITP &gt;500 / IELTS 6.0)</option>
+                                    <option value="4">Sangat Mahir + Sertifikat Resmi (IELTS ≥6.5 / JLPT / HSK)</option>
+                                </select>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="input-physical" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Kesiapan Fisik, Kesehatan & Kesamaptaan (Khususnya Relevan untuk Kedinasan)</label>
+                                <select id="input-physical" class="w-full px-3 py-2.5 rounded-xl border-2 border-inkDark font-semibold text-xs sm:text-sm bg-white focus:outline-none">
+                                    <option value="2">Cukup Sehat (Olahraga sesekali)</option>
+                                    <option value="3">Bugar & Rutin Olahraga (Minus mata aman / terkoreksi)</option>
+                                    <option value="4">Sangat Prima (Latihan fisik rutin, siap tes Samapta & Kesehatan)</option>
+                                    <option value="1">Ada kendala kesehatan/minus tinggi (perlu konsultasi)</option>
+                                </select>
+                            </div>
+
+                            <!-- Kolom Sertifikat & Skor SAT -->
+                            <div class="sm:col-span-2 bg-indigo-50/85 p-3.5 rounded-2xl border-2 border-inkDark space-y-2.5">
+                                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-start">
+                                    <div class="sm:col-span-6">
+                                        <label for="input-sat-status" class="block text-xs font-extrabold uppercase text-indigo-950 mb-1">
+                                            🌐 Sertifikat & Skor SAT (Scholastic Assessment Test)
+                                        </label>
+                                        <select id="input-sat-status" onchange="handleSatStatusChange()"
+                                            class="w-full px-3 py-2.5 rounded-xl border-2 border-inkDark font-semibold text-xs sm:text-sm bg-white focus:outline-none focus:ring-4 focus:ring-cyberLime">
+                                            <option value="NONE">Belum Memiliki / Belum Tes</option>
+                                            <option value="PREP">Sedang Persiapan / Terdaftar</option>
+                                            <option value="CERTIFIED">Sudah Memiliki Sertifikat SAT</option>
+                                        </select>
+                                    </div>
+                                    <div id="sat-score-wrapper" class="sm:col-span-6 hidden">
+                                        <div class="flex items-center justify-between mb-1">
+                                            <label for="input-sat-score" class="block text-xs font-extrabold uppercase text-indigo-950">
+                                                Skor SAT Total (400–1600) *
+                                            </label>
+                                            <span id="sat-tier-badge" class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 border border-inkDark">
+                                                Rentang 400–1600
+                                            </span>
+                                        </div>
+                                        <input type="text" id="input-sat-score" inputmode="decimal" placeholder="Contoh: 1420 (Rentang 400–1600)"
+                                            oninput="updateSatBadge()" onchange="updateSatBadge()" onblur="formatSatScoreOnBlur()"
+                                            class="w-full px-3.5 py-2.5 rounded-xl border-2 border-inkDark font-display font-bold text-xs sm:text-sm bg-white focus:outline-none focus:ring-4 focus:ring-cyberLime">
+                                        <p id="sat-error-msg" class="hidden text-[11px] font-bold text-rose-700 mt-1">
+                                            ⚠️ Skor SAT harus berupa angka antara 400 hingga 1600.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kolom Kepemilikan Riset / Karya Ilmiah & Judul Riset -->
+                            <div class="sm:col-span-2 bg-emerald-50/85 p-3.5 rounded-2xl border-2 border-inkDark space-y-2.5">
+                                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-start">
+                                    <div class="sm:col-span-5">
+                                        <label for="input-research-status" class="block text-xs font-extrabold uppercase text-emerald-950 mb-1">
+                                            🔬 Kepemilikan Riset / KIR / OPSI / MYRES
+                                        </label>
+                                        <select id="input-research-status" onchange="handleResearchStatusChange()"
+                                            class="w-full px-3 py-2.5 rounded-xl border-2 border-inkDark font-semibold text-xs sm:text-sm bg-white focus:outline-none focus:ring-4 focus:ring-cyberLime">
+                                            <option value="NONE">Belum Ada Riset</option>
+                                            <option value="ONGOING">Sedang Berjalan / Draft Proposal</option>
+                                            <option value="COMPLETED">Selesai / Finalis Lomba / Publikasi</option>
+                                        </select>
+                                    </div>
+                                    <div id="research-title-wrapper" class="sm:col-span-7 hidden">
+                                        <label for="input-research-title" class="block text-xs font-extrabold uppercase text-emerald-950 mb-1">
+                                            Judul Riset / Karya Ilmiah *
+                                        </label>
+                                        <input type="text" id="input-research-title" maxlength="160"
+                                            placeholder="Contoh: Sistem Deteksi Dini Kualitas Air Berbasis IoT dan Machine Learning"
+                                            class="w-full px-3.5 py-2.5 rounded-xl border-2 border-inkDark font-semibold text-xs sm:text-sm bg-white focus:outline-none focus:ring-4 focus:ring-cyberLime">
+                                        <p class="text-[10px] font-semibold text-emerald-800 mt-1">
+                                            ✨ Portofolio riset memperkuat peluang jalur prestasi (SNBP), PTLN, dan Beasiswa PTS.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Pemilihan 4 Ekosistem Kampus Impian -->
+                <div class="neo-card rounded-3xl p-5 sm:p-6 space-y-4">
+                    <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-100 pb-3">
+                        <div>
+                            <h2 class="font-display font-bold text-lg sm:text-xl text-inkDark flex items-center gap-2">
+                                <span>🎓</span> Pilih Ekosistem & Target Kampus Impianmu
+                            </h2>
+                            <p class="text-xs text-slate-500 font-medium">Sistem akan mengkalibrasi indikator rasionalisasi & butir asesmen sesuai jalur yang kamu pilih.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4 Tab Ekosistem -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                        <button type="button" onclick="selectEcosystem('PTN')" id="eco-btn-PTN"
+                            class="track-pill active rounded-2xl p-3.5 text-left bg-white flex flex-col justify-between">
+                            <span class="text-2xl mb-1">🏛️</span>
+                            <div>
+                                <div class="font-display font-bold text-sm sm:text-base text-inkDark">PTN</div>
+                                <div class="text-[11px] font-semibold text-slate-600">SNBP • SNBT • Mandiri</div>
+                            </div>
+                        </button>
+
+                        <button type="button" onclick="selectEcosystem('KEDINASAN')" id="eco-btn-KEDINASAN"
+                            class="track-pill rounded-2xl p-3.5 text-left bg-white flex flex-col justify-between">
+                            <span class="text-2xl mb-1">🎖️</span>
+                            <div>
+                                <div class="font-display font-bold text-sm sm:text-base text-inkDark">Sekolah Kedinasan</div>
+                                <div class="text-[11px] font-semibold text-slate-600">CPNS • Ikatan Dinas</div>
+                            </div>
+                        </button>
+
+                        <button type="button" onclick="selectEcosystem('PTLN')" id="eco-btn-PTLN"
+                            class="track-pill rounded-2xl p-3.5 text-left bg-white flex flex-col justify-between">
+                            <span class="text-2xl mb-1">🌏</span>
+                            <div>
+                                <div class="font-display font-bold text-sm sm:text-base text-inkDark">PTLN (Luar Negeri)</div>
+                                <div class="text-[11px] font-semibold text-slate-600">Beasiswa BIM • LPDP</div>
+                            </div>
+                        </button>
+
+                        <button type="button" onclick="selectEcosystem('PTS')" id="eco-btn-PTS"
+                            class="track-pill rounded-2xl p-3.5 text-left bg-white flex flex-col justify-between">
+                            <span class="text-2xl mb-1">🏢</span>
+                            <div>
+                                <div class="font-display font-bold text-sm sm:text-base text-inkDark">PTS Unggulan</div>
+                                <div class="text-[11px] font-semibold text-slate-600">Swasta • Jalur Beasiswa</div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <!-- Detail Kampus & Program Studi -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                        <div>
+                            <label for="input-university" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Institusi / Perguruan Tinggi Target *</label>
+                            <select id="input-university" onchange="handleUniChange()" class="w-full px-3.5 py-2.5 rounded-xl border-2 border-inkDark font-bold text-sm bg-white focus:outline-none">
+                                <!-- Diisi dinamis JS -->
+                            </select>
+                            <input type="text" id="input-university-custom" placeholder="Ketik nama kampus impianmu..." maxlength="45"
+                                class="hidden mt-2 w-full px-3.5 py-2 rounded-xl border-2 border-inkDark font-semibold text-xs bg-amber-50 focus:outline-none">
+                        </div>
+
+                        <div>
+                            <label for="input-cluster" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Rumpun Program Studi *</label>
+                            <select id="input-cluster" onchange="handleClusterChange()" class="w-full px-3.5 py-2.5 rounded-xl border-2 border-inkDark font-bold text-sm bg-white focus:outline-none">
+                                <option value="KEDOKTERAN">Kedokteran & Ilmu Kesehatan</option>
+                                <option value="IT_DATA" selected>Teknik Informatika, AI & Sains Data</option>
+                                <option value="TEKNIK">Teknik Industri, Sipil, Elektro & Mesin</option>
+                                <option value="EKONOMI">Ekonomi, Manajemen, Akuntansi & Keuangan</option>
+                                <option value="SOSHUM">Hukum, Psikologi, Komunikasi & HI</option>
+                                <option value="PEMERINTAHAN">Administrasi Negara, Statistika & Intelijen</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="input-prodi-name" class="block text-xs font-extrabold uppercase text-slate-600 mb-1">Nama Program Studi / Jurusan *</label>
+                            <select id="input-prodi-preset" onchange="handleProdiPresetChange()" class="w-full px-3.5 py-2.5 rounded-xl border-2 border-inkDark font-bold text-sm bg-white focus:outline-none">
+                                <!-- Diisi dinamis sesuai rumpun -->
+                            </select>
+                            <input type="text" id="input-prodi-name" required value="Teknik Informatika" maxlength="40" placeholder="Atau ketik nama program studi..."
+                                class="mt-2 w-full px-3.5 py-2 rounded-xl border-2 border-inkDark font-semibold text-xs bg-slate-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-cyberLime">
+                        </div>
+                    </div>
+
+                    <!-- Info Passing Grade & Standar Minimum Target -->
+                    <div id="target-benchmark-banner" class="bg-slate-900 text-white rounded-2xl p-3.5 border-2 border-inkDark flex flex-wrap items-center justify-between gap-2 text-xs">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-cyberLime text-inkDark font-extrabold px-2 py-0.5 rounded">BENCHMARK TARGET</span>
+                            <span id="benchmark-text" class="font-semibold text-slate-200">Rapor ideal ≥ 89.0 • Mapel Pendukung: Matematika & Fisika / Informatika</span>
+                        </div>
+                        <span id="benchmark-test-text" class="font-bold text-skyPulse">Min. UTBK: ~645+ / SAT: ~1350+</span>
+                    </div>
+                </div>
+
+                <!-- Tombol Lanjut ke Step 2 -->
+                <div class="flex justify-end">
+                    <button type="submit" class="w-full sm:w-auto neo-btn bg-electricIndigo hover:bg-indigo-600 text-white font-display font-bold text-base sm:text-lg px-8 py-4 rounded-2xl flex items-center justify-center gap-2.5">
+                        <span>Lanjut ke Radar Kesiapan Karir (24 Butir)</span> <span>➡️</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- STEP 2: ASESMEN KESIAPAN KARIR 24 BUTIR TERKALIBRASI    -->
+        <!-- ======================================================= -->
+        <section id="step-2-section" class="hidden animate-slide-up space-y-5">
+            <!-- Header Progress Asesmen -->
+            <div class="neo-card rounded-3xl p-5 bg-white space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <div>
+                        <span id="dim-badge" class="inline-block bg-cyberLime border border-inkDark font-extrabold text-[11px] px-3 py-0.5 rounded-full mb-1">
+                            DIMENSI 1 DARI 4 • CAREER SELF-AWARENESS
+                        </span>
+                        <h2 id="dim-title" class="font-display font-bold text-xl sm:text-2xl text-inkDark">
+                            Pemahaman Diri & Efikasi Keputusan Karir
+                        </h2>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="autoFillSimulation()" class="text-xs font-bold px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 border-2 border-inkDark text-inkDark transition cursor-pointer" title="Isi otomatis untuk uji cepat Guru BK">
+                            ⚡ Simulasi Cepat
+                        </button>
+                        <div class="bg-inkDark text-cyberLime font-display font-bold text-xs sm:text-sm px-3.5 py-1.5 rounded-xl">
+                            <span id="assessment-progress-text">0 / 24 Terjawab</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full h-3.5 bg-slate-200 rounded-full border-2 border-inkDark overflow-hidden p-0.5">
+                    <div id="assessment-progress-bar" class="h-full bg-electricIndigo rounded-full transition-all duration-300" style="width: 0%;"></div>
+                </div>
+
+                <!-- Navigasi Tab 4 Dimensi -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+                    <button type="button" onclick="switchDimensionTab(0)" id="dim-tab-0" class="py-2 px-3 rounded-xl border-2 border-inkDark font-bold text-xs text-left bg-cyberLime">
+                        1. Pemahaman Diri (6)
+                    </button>
+                    <button type="button" onclick="switchDimensionTab(1)" id="dim-tab-1" class="py-2 px-3 rounded-xl border-2 border-slate-300 font-bold text-xs text-left bg-slate-50 text-slate-600">
+                        2. Akademik & Porto (6)
+                    </button>
+                    <button type="button" onclick="switchDimensionTab(2)" id="dim-tab-2" class="py-2 px-3 rounded-xl border-2 border-slate-300 font-bold text-xs text-left bg-slate-50 text-slate-600">
+                        3. Literasi Jalur (6)
+                    </button>
+                    <button type="button" onclick="switchDimensionTab(3)" id="dim-tab-3" class="py-2 px-3 rounded-xl border-2 border-slate-300 font-bold text-xs text-left bg-slate-50 text-slate-600">
+                        4. Strategi & Keputusan (6)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Daftar Pertanyaan Dimensi Aktif -->
+            <div id="questions-list-container" class="space-y-4">
+                <!-- Di-render dinamis oleh JS -->
+            </div>
+
+            <!-- Tombol Navigasi Bawah -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+                <button type="button" id="btn-prev-dim" onclick="handlePrevDimension()" class="neo-btn bg-white text-inkDark font-display font-bold text-sm sm:text-base px-6 py-3 rounded-xl">
+                    ⬅️ Kembali ke Profil
+                </button>
+
+                <button type="button" id="btn-next-dim" onclick="handleNextDimension()" class="neo-btn bg-electricIndigo text-white font-display font-bold text-sm sm:text-base px-6 py-3 rounded-xl flex items-center gap-2">
+                    <span>Simpan & Lanjut Dimensi 2</span> <span>➡️</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- STEP 3: HASIL RASIONALISASI & DOKUMEN RESMI GURU BK     -->
+        <!-- ======================================================= -->
+        <section id="step-3-section" class="hidden animate-slide-up space-y-5">
+            
+            <!-- Action Toolbar Export (Tidak Ikut Tercetak) -->
+            <div class="no-print neo-card rounded-3xl p-4 sm:p-5 bg-inkDark text-white space-y-3">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                    <div>
+                        <span class="inline-block bg-cyberLime text-inkDark font-extrabold text-[10px] px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-1">
+                            ✅ ANALISIS AKURASI TINGGI SELESAI
+                        </span>
+                        <h2 class="font-display font-bold text-lg sm:text-xl">Pusat Unduhan Berkas Guru BK & Siswa</h2>
+                        <p class="text-xs text-slate-300">Simpan hasil asesmen menjadi dokumen Word (.DOC) resmi, rekap Excel (.CSV), kartu portofolio (.PNG), atau cetak A4.</p>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-2">
+                        <button type="button" onclick="downloadGuruBKWordDoc()" class="neo-btn bg-cyberLime hover:bg-lime-300 text-inkDark font-display font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl flex items-center gap-1.5">
+                            <span>📄</span> Unduh Laporan BK (.DOC)
+                        </button>
+                        <button type="button" onclick="downloadRecapCSV(false)" class="neo-btn bg-amberGold hover:bg-amber-300 text-inkDark font-display font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl flex items-center gap-1.5">
+                            <span>📊</span> Unduh Excel (.CSV)
+                        </button>
+                        <button type="button" onclick="downloadSummaryCardPNG()" class="neo-btn bg-skyPulse hover:bg-sky-300 text-inkDark font-display font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl flex items-center gap-1.5">
+                            <span>🖼️</span> Kartu Siswa (.PNG)
+                        </button>
+                        <button type="button" onclick="openPrintPreviewModal()" class="neo-btn bg-white hover:bg-slate-100 text-inkDark font-display font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl flex items-center gap-1.5">
+                            <span>🖨️</span> Cetak A4
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Baris Arsip Kelas Multi-Siswa untuk Guru BK -->
+                <div class="pt-2.5 border-t border-slate-700 flex flex-wrap items-center justify-between gap-2 text-xs">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-electricIndigo text-white font-bold px-2.5 py-1 rounded-lg">🗄️ Arsip Kelas BK:</span>
+                        <span class="text-slate-300">Tersimpan <strong id="saved-class-count" class="text-cyberLime">0 Siswa</strong> di perangkat ini.</span>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <button type="button" onclick="saveStudentToClassDB()" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-inkDark font-extrabold transition cursor-pointer">
+                            ➕ Simpan Siswa Ini ke Arsip Kelas
+                        </button>
+                        <button type="button" onclick="openArchiveModal()" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-white font-bold transition cursor-pointer">
+                            👁️ Lihat & Unduh Rekap Kelas (.CSV)
+                        </button>
+                        <button type="button" onclick="copyReportToClipboard()" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-white font-bold transition cursor-pointer">
+                            📋 Salin Teks
+                        </button>
+                        <button type="button" onclick="resetToStart()" class="px-3 py-1.5 rounded-lg bg-rose-500/20 hover:bg-rose-500/40 text-rose-200 font-bold transition cursor-pointer">
+                            🔄 Ulangi
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================================================== -->
+            <!-- LEMBAR LAPORAN RESMI (PRINTABLE & GURU BK FILE)     -->
+            <!-- =================================================== -->
+            <div id="print-report-sheet" class="neo-card rounded-3xl p-5 sm:p-8 bg-white space-y-6">
+                
+                <!-- Kop Dokumen Layanan BK -->
+                <div class="border-b-3 border-inkDark pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                        <span class="text-[11px] font-extrabold uppercase tracking-widest text-electricIndigo block">
+                            DOKUMEN LAYANAN BIMBINGAN DAN KONSELING KARIR
+                        </span>
+                        <h2 class="font-display font-bold text-xl sm:text-2xl text-inkDark">
+                            LAPORAN KESIAPAN KARIR & RASIONALISASI STUDI LANJUT
+                        </h2>
+                        <p id="rep-school-header" class="text-xs font-semibold text-slate-600 mt-0.5">
+                            MAN 2 Kota Malang • Tahun Pelajaran 2026/2027
+                        </p>
+                    </div>
+                    <div class="text-left sm:text-right text-xs bg-slate-100 px-3.5 py-2 rounded-xl border border-inkDark shrink-0">
+                        <div class="font-bold text-inkDark">Kode: <span id="rep-doc-id">BK-XI/2026/001</span></div>
+                        <div class="text-slate-600">Tanggal: <span id="rep-date">-</span></div>
+                        <div class="text-emerald-700 font-extrabold">Validitas Respon: <span id="rep-consistency">99% Konsisten</span></div>
+                    </div>
+                </div>
+
+                <!-- Identitas Siswa & Profil Akademik Ringkas + Grafik Tren Rapor Sem 1-3 -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 bg-slate-50 p-4 rounded-2xl border-2 border-inkDark text-xs sm:text-sm">
+                    <div class="lg:col-span-5 space-y-1.5">
+                        <div class="flex justify-between gap-2"><span class="text-slate-500 font-semibold shrink-0">Nama Peserta Didik:</span> <strong id="rep-name" class="text-inkDark text-right">-</strong></div>
+                        <div class="flex justify-between gap-2"><span class="text-slate-500 font-semibold shrink-0">Kelas / Peminatan:</span> <strong id="rep-class" class="text-inkDark text-right">-</strong></div>
+                        <div class="flex justify-between gap-2"><span class="text-slate-500 font-semibold shrink-0">Guru BK Pembimbing:</span> <strong id="rep-counselor" class="text-inkDark text-right">-</strong></div>
+                        <div class="flex justify-between gap-2"><span class="text-slate-500 font-semibold shrink-0">Mapel Pendukung:</span> <strong id="rep-subjects" class="text-inkDark text-right">-</strong></div>
+                        <div class="flex justify-between gap-2"><span class="text-slate-500 font-semibold shrink-0">Lomba & Bahasa:</span> <strong id="rep-porto" class="text-inkDark text-right">-</strong></div>
+                        <div class="flex justify-between gap-2"><span class="text-slate-500 font-semibold shrink-0">Sertifikat SAT:</span> <strong id="rep-sat" class="text-indigo-800 text-right">-</strong></div>
+                        <div class="flex justify-between gap-2"><span class="text-slate-500 font-semibold shrink-0">Portofolio Riset:</span> <strong id="rep-research" class="text-emerald-800 text-right">-</strong></div>
+                    </div>
+                    <div class="lg:col-span-7 lg:border-l-2 lg:border-slate-200 lg:pl-4 flex flex-col justify-between gap-3">
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+                            <div class="space-y-1.5 w-full sm:w-1/2">
+                                <span class="text-[11px] font-extrabold uppercase text-slate-500 block">REKAM NILAI RAPOR (SEM 1–3)</span>
+                                <div class="grid grid-cols-3 gap-1.5 text-center">
+                                    <div class="bg-white p-1.5 rounded-lg border border-slate-300">
+                                        <span class="text-[10px] text-slate-500 block">Sem 1</span>
+                                        <strong id="rep-sem1" class="font-display text-sm text-inkDark">-</strong>
+                                    </div>
+                                    <div class="bg-white p-1.5 rounded-lg border border-slate-300">
+                                        <span class="text-[10px] text-slate-500 block">Sem 2</span>
+                                        <strong id="rep-sem2" class="font-display text-sm text-inkDark">-</strong>
+                                    </div>
+                                    <div class="bg-white p-1.5 rounded-lg border border-slate-300">
+                                        <span class="text-[10px] text-slate-500 block">Sem 3</span>
+                                        <strong id="rep-sem3" class="font-display text-sm text-electricIndigo">-</strong>
+                                    </div>
+                                </div>
+                                <div class="pt-1 flex items-center justify-between text-xs bg-white px-2.5 py-1.5 rounded-lg border border-inkDark">
+                                    <span>Rata-rata 1–3: <strong id="rep-rapor" class="text-electricIndigo font-display text-sm">-</strong></span>
+                                    <span id="rep-trend-badge" class="font-extrabold text-emerald-700">Progresif (+0.0)</span>
+                                </div>
+                            </div>
+                            <!-- Mini SVG Line Chart Tren Rapor -->
+                            <div class="w-full sm:w-1/2 bg-white p-2 rounded-xl border border-inkDark">
+                                <svg id="trend-svg" viewBox="0 0 240 94" class="w-full h-auto"></svg>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Profil Portofolio Unggulan (SAT & Judul Riset) -->
+                        <div id="rep-featured-portfolio-box" class="bg-white p-3 rounded-xl border-2 border-inkDark text-xs space-y-1">
+                            <div class="font-display font-bold text-inkDark flex items-center justify-between">
+                                <span>🏅 PROFIL PORTOFOLIO UNGGULAN (SAT & RISET)</span>
+                                <span id="rep-porto-badge" class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-cyberLime border border-inkDark">Terekam</span>
+                            </div>
+                            <p id="rep-featured-sat-line" class="text-slate-700 font-semibold">• SAT: Belum Memiliki / Belum Tes</p>
+                            <p id="rep-featured-research-line" class="text-slate-700 font-semibold">• Riset/KIR: Belum Ada Riset</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN A: HASIL RASIONALISASI TARGET UTAMA -->
+                <div class="space-y-3">
+                    <h3 class="font-display font-bold text-base sm:text-lg text-inkDark flex items-center gap-2">
+                        <span class="bg-electricIndigo text-white w-6 h-6 rounded-lg inline-flex items-center justify-center text-xs">A</span>
+                        HASIL RASIONALISASI TARGET UTAMA (PLAN A)
+                    </h3>
+
+                    <div id="rationalization-hero-box" class="rounded-2xl border-2.5 border-inkDark p-4 sm:p-5 bg-emerald-50 flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div class="space-y-1 text-center md:text-left">
+                            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                                <span id="rat-eco-tag" class="bg-inkDark text-cyberLime font-display font-bold text-xs px-2.5 py-0.5 rounded-lg">PTN</span>
+                                <span id="rat-zone-badge" class="bg-emeraldPop text-inkDark border border-inkDark font-extrabold text-xs px-2.5 py-0.5 rounded-lg">ZONA HIJAU • KOMPETITIF</span>
+                            </div>
+                            <h4 id="rat-uni-title" class="font-display font-bold text-xl sm:text-2xl text-inkDark">
+                                Universitas Brawijaya — Teknik Informatika
+                            </h4>
+                            <p id="rat-narrative" class="text-xs sm:text-sm text-slate-700 font-medium max-w-2xl">
+                                Penjelasan analisis peluang rasionalisasi...
+                            </p>
+                        </div>
+
+                        <div class="bg-white border-2.5 border-inkDark rounded-2xl px-5 py-3 text-center shrink-0 shadow-neo-sm">
+                            <span class="text-[11px] font-extrabold uppercase text-slate-500 block">ESTIMASI PELUANG</span>
+                            <span id="rat-percentage" class="font-display font-bold text-3xl sm:text-4xl text-electricIndigo">84%</span>
+                            <span class="text-[10px] font-bold text-slate-500 block">Indeks Rasional</span>
+                        </div>
+                    </div>
+
+                    <!-- Rincian 5 Komponen Skor Rasionalisasi -->
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 text-center text-xs">
+                        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-300">
+                            <span class="text-slate-500 block font-semibold">Bobot Rapor (40%)</span>
+                            <strong id="comp-rapor" class="font-display text-base text-inkDark">35/40</strong>
+                        </div>
+                        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-300">
+                            <span class="text-slate-500 block font-semibold">Tren Naik (10%)</span>
+                            <strong id="comp-trend" class="font-display text-base text-emerald-700">+8/10</strong>
+                        </div>
+                        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-300">
+                            <span class="text-slate-500 block font-semibold">Kesiapan Karir (25%)</span>
+                            <strong id="comp-career" class="font-display text-base text-inkDark">21/25</strong>
+                        </div>
+                        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-300">
+                            <span class="text-slate-500 block font-semibold">Porto/SAT/Riset (15%)</span>
+                            <strong id="comp-porto" class="font-display text-base text-inkDark">11/15</strong>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 bg-slate-50 p-2.5 rounded-xl border border-slate-300">
+                            <span class="text-slate-500 block font-semibold">Linear Mapel (10%)</span>
+                            <strong id="comp-mapel" class="font-display text-base text-inkDark">9/10</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN B: PROFIL 4 DIMENSI KESIAPAN KARIR (RADAR + BARS) -->
+                <div class="space-y-3">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <h3 class="font-display font-bold text-base sm:text-lg text-inkDark flex items-center gap-2">
+                            <span class="bg-electricIndigo text-white w-6 h-6 rounded-lg inline-flex items-center justify-center text-xs">B</span>
+                            PROFIL KESIAPAN KARIR SISWA (4 DIMENSI PSIKOLOGIS)
+                        </h3>
+                        <span class="text-xs font-extrabold bg-cyberLime px-3 py-1 rounded-xl border border-inkDark">
+                            Indeks Kesiapan: <span id="career-total-pct">85%</span> (<span id="career-status-label">Siap Tempur</span>)
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+                        <!-- SVG Radar Chart -->
+                        <div class="lg:col-span-5 bg-slate-50 rounded-2xl border-2 border-inkDark p-3 flex flex-col items-center justify-center">
+                            <svg id="radar-svg" viewBox="0 0 320 260" class="w-full max-w-[290px] h-auto"></svg>
+                        </div>
+
+                        <!-- 4 Bar Dimensi -->
+                        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3" id="dimensions-breakdown-grid">
+                            <!-- Di-render dinamis oleh JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN C: REKOMENDASI STRATEGI PLAN A, PLAN B, PLAN C -->
+                <div class="space-y-3">
+                    <h3 class="font-display font-bold text-base sm:text-lg text-inkDark flex items-center gap-2">
+                        <span class="bg-electricIndigo text-white w-6 h-6 rounded-lg inline-flex items-center justify-center text-xs">C</span>
+                        MATRIKS REKOMENDASI ALTERNATIF CERDAS (PLAN A • PLAN B • PLAN C)
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5" id="plans-grid">
+                        <!-- Di-render dinamis oleh JS -->
+                    </div>
+                </div>
+
+                <!-- BAGIAN D: KESIMPULAN BK & ROADMAP AKSI KELAS XI -->
+                <div class="bg-amber-50/80 border-2 border-inkDark rounded-2xl p-4 sm:p-5 space-y-2.5">
+                    <h4 class="font-display font-bold text-sm sm:text-base text-inkDark flex items-center gap-2">
+                        <span>🧭</span> KESIMPULAN KONSULTASI & ROADMAP AKSI KELAS XI (SEMESTER 3 → 5):
+                    </h4>
+                    <p id="rep-conclusion-text" class="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium">
+                        Kesimpulan lengkap kesiapan karir...
+                    </p>
+                    <ul id="rep-action-list" class="list-disc list-inside text-xs sm:text-sm text-slate-700 space-y-1 pt-1 font-medium">
+                        <!-- Action items -->
+                    </ul>
+                </div>
+
+                <!-- KOLOM PENGESAHAN & TANDA TANGAN (UNTUK ARSIP GURU BK & SISWA) -->
+                <div class="pt-4 grid grid-cols-2 gap-6 text-center text-xs sm:text-sm">
+                    <div class="space-y-12">
+                        <div>
+                            <p class="text-slate-600 font-medium">Mengetahui / Konselor Pendidikan,</p>
+                            <p class="font-bold text-inkDark">Guru Bimbingan dan Konseling</p>
+                        </div>
+                        <div>
+                            <p id="sign-counselor-name" class="font-bold text-inkDark underline">Endah Kurniawati, S.Pd</p>
+                            <p class="text-[11px] text-slate-500">NIP. ........................................</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-12">
+                        <div>
+                            <p id="sign-city-date" class="text-slate-600 font-medium">Malang, 17 November 2026</p>
+                            <p class="font-bold text-inkDark">Peserta Didik Kelas XI</p>
+                        </div>
+                        <div>
+                            <p id="sign-student-name" class="font-bold text-inkDark underline">Nama Siswa</p>
+                            <p id="sign-student-class" class="text-[11px] text-slate-500">Kelas XI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="no-print w-full max-w-6xl mx-auto px-4 py-4 text-center text-xs text-slate-500 font-medium">
+        FUTURE-READY XI • Layanan Bimbingan dan Konseling Karir SMA/MA • Tahun Pelajaran 2026/2027
+    </footer>
+
+    <!-- Hidden Canvas untuk Generate Kartu Ringkasan Karir PNG -->
+    <canvas id="summary-png-canvas" width="1080" height="1380" class="hidden"></canvas>
+
+    <!-- Modal Pratinjau Cetak & Salin Laporan -->
+    <div id="print-preview-modal" class="no-print hidden fixed inset-0 bg-inkDark/80 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+        <div class="neo-card rounded-3xl max-w-2xl w-full p-6 bg-white space-y-4 max-h-[88vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b-2 border-slate-200 pb-3">
+                <h3 class="font-display font-bold text-lg sm:text-xl text-inkDark">🖨️ Pratinjau Cetak & Ekspor Alternatif</h3>
+                <button type="button" onclick="closePrintPreviewModal()" class="neo-btn bg-coralPink text-inkDark font-bold px-3 py-1 rounded-xl text-xs">✕ Tutup</button>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600">
+                Jika dialog cetak browser dibatasi oleh mode pratinjau/iframe, gunakan tombol <strong>Unduh Laporan BK (.DOC)</strong> untuk membuka dokumen resmi langsung di Microsoft Word / Google Docs, atau panggil dialog cetak di bawah ini:
+            </p>
+            <div class="flex flex-wrap gap-2.5">
+                <button type="button" onclick="triggerSafePrint()" class="neo-btn bg-cyberLime text-inkDark font-display font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl">
+                    🖨️ Panggil Dialog Cetak Sistem
+                </button>
+                <button type="button" onclick="downloadGuruBKWordDoc()" class="neo-btn bg-electricIndigo text-white font-display font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl">
+                    📄 Unduh File Word (.DOC)
+                </button>
+                <button type="button" onclick="copyReportToClipboard()" class="neo-btn bg-amberGold text-inkDark font-display font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl">
+                    📋 Salin Teks Lengkap
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Preview Arsip Kelas Guru BK -->
+    <div id="archive-modal" class="no-print hidden fixed inset-0 bg-inkDark/80 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+        <div class="neo-card rounded-3xl max-w-4xl w-full p-6 bg-white space-y-4 max-h-[88vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b-2 border-slate-200 pb-3">
+                <h3 class="font-display font-bold text-lg sm:text-xl text-inkDark">🗄️ Arsip Rekapitulasi Kelas Guru BK</h3>
+                <button type="button" onclick="closeArchiveModal()" class="neo-btn bg-coralPink text-inkDark font-bold px-3 py-1 rounded-xl text-xs">✕ Tutup</button>
+            </div>
+            <div id="archive-table-container" class="overflow-x-auto text-xs">
+                <!-- Diisi dinamis oleh JS -->
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-200">
+                <button type="button" onclick="downloadRecapCSV(true)" class="neo-btn bg-amberGold text-inkDark font-display font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl">
+                    📊 Unduh Semua ke Excel (.CSV)
+                </button>
+                <button type="button" onclick="clearClassDB(); closeArchiveModal();" class="text-xs font-bold text-rose-600 hover:underline px-3 py-2 cursor-pointer">
+                    🗑️ Hapus Semua Data Arsip
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-box" class="no-print fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden">
+        <div class="bg-inkDark text-cyberLime px-5 py-3 rounded-2xl border-2 border-cyberLime shadow-neo font-display font-bold text-xs sm:text-sm flex items-center gap-2">
+            <span id="toast-icon">🔔</span>
+            <span id="toast-msg">Notifikasi</span>
+        </div>
+    </div>
+
+    <!-- ======================================================= -->
+    <!-- JAVASCRIPT LOGIC: PARSER RAPOR, INVENTORY & EXPORT      -->
+    <!-- ======================================================= -->
+    <script>
+        // ==========================================
+        // 1. DATABASE KAMPUS & RUMPUN PRODI (4 EKOSISTEM LENGKAP)
+        // ==========================================
+        const universityDatabase = {
+            PTN: [
+                { name: "Universitas Indonesia (UI)", tier: 91.5, minUtbk: "675+", path: "SNBP / UTBK-SNBT / SIMAK UI" },
+                { name: "Universitas Gadjah Mada (UGM)", tier: 91.0, minUtbk: "670+", path: "SNBP / UTBK-SNBT / UM UGM" },
+                { name: "Institut Teknologi Bandung (ITB)", tier: 91.5, minUtbk: "675+", path: "SNBP / UTBK-SNBT / SM-ITB" },
+                { name: "Universitas Airlangga (UNAIR)", tier: 89.0, minUtbk: "650+", path: "SNBP / UTBK-SNBT / Mandiri" },
+                { name: "Institut Teknologi Sepuluh Nopember (ITS)", tier: 89.0, minUtbk: "650+", path: "SNBP / UTBK-SNBT / SKM" },
+                { name: "Universitas Brawijaya (UB)", tier: 87.5, minUtbk: "635+", path: "SNBP / UTBK-SNBT / SELMA" },
+                { name: "Universitas Diponegoro (UNDIP)", tier: 87.5, minUtbk: "635+", path: "SNBP / UTBK-SNBT / UM UNDIP" },
+                { name: "Universitas Padjadjaran (UNPAD)", tier: 88.0, minUtbk: "640+", path: "SNBP / UTBK-SNBT / SMUP" },
+                { name: "Universitas Negeri Malang (UM)", tier: 85.5, minUtbk: "615+", path: "SNBP / UTBK-SNBT / Seleksi Mandiri" },
+                { name: "CUSTOM", tier: 86.0, minUtbk: "620+", path: "SNBP / UTBK-SNBT / Mandiri" }
+            ],
+            KEDINASAN: [
+                { name: "PKN STAN (Kementerian Keuangan)", tier: 90.5, minUtbk: "SKD ≥425 + UTBK", path: "SPMB PKN STAN (UTBK + SKD + Psikotes)" },
+                { name: "IPDN (Kementerian Dalam Negeri)", tier: 89.5, minUtbk: "SKD ≥415 + Samapta", path: "SPCP IPDN (SKD + Kesehatan + Samapta + Pantukhir)" },
+                { name: "Politeknik Statistika STIS (BPS)", tier: 90.0, minUtbk: "SKD ≥420 + Mat", path: "SPMB STIS (SKD + Matematika + Psikotes)" },
+                { name: "Sekolah Tinggi Intelijen Negara (STIN)", tier: 90.5, minUtbk: "SKD ≥420 + Fisik", path: "PTB STIN (SKD + Psikologi + Fisik + Mental Ideologi)" },
+                { name: "Poltekip / Poltekim (Kemenkumham)", tier: 88.0, minUtbk: "SKD ≥405 + Samapta", path: "Catar Kemenkumham (SKD + Kesamaptaan)" },
+                { name: "STMKG (BMKG)", tier: 88.0, minUtbk: "SKD ≥405 + SKB IPA", path: "PTB STMKG (SKD + SKB Fisika/Matematika/Inggris)" },
+                { name: "PTDI-STTD (Kementerian Perhubungan)", tier: 87.0, minUtbk: "SKD ≥400 + Samapta", path: "Sipencatar Kemenhub (SKD + Kesehatan + Samapta)" },
+                { name: "CUSTOM", tier: 88.0, minUtbk: "SKD BKN + Samapta", path: "Seleksi Sekolah Kedinasan Nasional" }
+            ],
+            PTLN: [
+                { name: "National University of Singapore (NUS)", tier: 94.0, minUtbk: "SAT ≥1480 / IELTS ≥7.0", path: "Beasiswa BIM / ASEAN / Internasional" },
+                { name: "Nanyang Technological University (NTU)", tier: 93.5, minUtbk: "SAT ≥1450 / IELTS ≥6.5", path: "Beasiswa BIM / NTU Scholarship" },
+                { name: "University of Melbourne (Australia)", tier: 90.5, minUtbk: "SAT ≥1380 / IELTS ≥6.5", path: "Beasiswa BIM / LPDP / Foundation" },
+                { name: "Monash University (Australia)", tier: 89.0, minUtbk: "SAT ≥1320 / IELTS ≥6.5", path: "Beasiswa BIM / Monash Merit" },
+                { name: "KAIST (Korea Selatan)", tier: 92.0, minUtbk: "SAT ≥1420 / TOEFL iBT ≥90", path: "KAIST International / GKS" },
+                { name: "The University of Tokyo (Jepang)", tier: 93.0, minUtbk: "SAT ≥1450 / IELTS ≥6.5", path: "Beasiswa MEXT / PEAK Program" },
+                { name: "RWTH Aachen University (Jerman)", tier: 90.0, minUtbk: "TestAS / Goethe B2", path: "Studienkolleg / Beasiswa BIM" },
+                { name: "Leiden University (Belanda)", tier: 89.5, minUtbk: "IELTS ≥6.5 / SAT ≥1350", path: "Beasiswa BIM / Holland Scholarship" },
+                { name: "CUSTOM", tier: 90.0, minUtbk: "SAT ≥1350 / IELTS ≥6.5", path: "Beasiswa Luar Negeri / Direct Entry" }
+            ],
+            PTS: [
+                { name: "BINUS University (Bina Nusantara)", tier: 83.5, minUtbk: "Rapor ≥84 / TPKS", path: "Jalur Rapor / Widia Scholarship" },
+                { name: "Telkom University (Bandung)", tier: 83.0, minUtbk: "Rapor ≥83 / JPA", path: "Jalur Rapor (JPA) / Beasiswa Unggulan" },
+                { name: "Universitas Islam Indonesia (UII)", tier: 82.0, minUtbk: "Rapor ≥82 / PBT", path: "PMDK Rapor / Cyber Test" },
+                { name: "Universitas Muhammadiyah Malang (UMM)", tier: 81.5, minUtbk: "Rapor ≥81 / JPA", path: "Jalur Prestasi Akademik (JPA)" },
+                { name: "Universitas Ciputra (Surabaya)", tier: 82.5, minUtbk: "Rapor ≥82 / Tes Potensi", path: "Jalur Rapor & Beasiswa Entrepreneur" },
+                { name: "Universitas Pelita Harapan (UPH)", tier: 83.0, minUtbk: "Rapor ≥83 / Beasiswa", path: "Merit Scholarship / Jalur Rapor" },
+                { name: "Universitas Prasetiya Mulya", tier: 84.5, minUtbk: "Rapor ≥85 / Tes Bisnis", path: "Jalur Rapor & Tes Potensi Bisnis" },
+                { name: "CUSTOM", tier: 82.0, minUtbk: "Rapor ≥82 / Beasiswa", path: "Jalur Rapor / Beasiswa Prestasi PTS" }
+            ]
+        };
+
+        const clusterProdiDatabase = {
+            KEDOKTERAN: {
+                idealSubjects: "Biologi & Kimia",
+                tierBoost: 2.0,
+                prodis: ["Pendidikan Dokter (Kedokteran)", "Kedokteran Gigi", "Farmasi", "Ilmu Keperawatan", "Kesehatan Masyarakat", "Gizi Kesehatan"]
+            },
+            IT_DATA: {
+                idealSubjects: "Matematika & Fisika / Informatika",
+                tierBoost: 1.0,
+                prodis: ["Teknik Informatika", "Ilmu Komputer", "Sistem Informasi", "Sains Data (Data Science)", "Artificial Intelligence & Robotika", "Cyber Security"]
+            },
+            TEKNIK: {
+                idealSubjects: "Matematika & Fisika / Informatika",
+                tierBoost: 0.5,
+                prodis: ["Teknik Industri", "Teknik Sipil", "Teknik Elektro", "Teknik Mesin", "Arsitektur", "Teknik Kimia"]
+            },
+            EKONOMI: {
+                idealSubjects: "Ekonomi, Sosiologi & Geografi",
+                tierBoost: 0.5,
+                prodis: ["Manajemen", "Akuntansi", "Ilmu Ekonomi", "Bisnis Digital", "Keuangan & Perbankan", "Ekonomi Islam"]
+            },
+            SOSHUM: {
+                idealSubjects: "Ekonomi, Sosiologi & Geografi",
+                tierBoost: 0.5,
+                prodis: ["Ilmu Hukum", "Psikologi", "Ilmu Komunikasi", "Hubungan Internasional (HI)", "Administrasi Bisnis", "Sastra Inggris"]
+            },
+            PEMERINTAHAN: {
+                idealSubjects: "Ekonomi, Sosiologi & Geografi",
+                tierBoost: 0.5,
+                prodis: ["Akuntansi Sektor Publik / Keuangan Negara", "Komputasi Statistik / Statistika", "Administrasi Pemerintahan Daerah", "Manajemen Transportasi", "Meteorologi / Klimatologi", "Keimigrasian / Pemasyarakatan"]
+            }
+        };
+
+        // ==========================================
+        // 2. INVENTORY 24 BUTIR ASESMEN PSIKOMETRIK (6 PER DIMENSI + REVERSE SCORED + ADAPTIF JALUR)
+        // ==========================================
+        const baseCareerDimensions = [
+            {
+                id: "self",
+                badge: "DIMENSI 1 DARI 4 • CAREER SELF-AWARENESS & SELF-EFFICACY",
+                title: "Pemahaman Diri & Efikasi Pengambilan Keputusan Karir",
+                shortName: "Pemahaman Diri",
+                color: "#4F46E5",
+                items: [
+                    { text: "Saya mampu mengidentifikasi mata pelajaran serta aktivitas pemecahan masalah yang paling selaras dengan potensi alami saya.", reverse: false },
+                    { text: "Saya menyadari kekuatan karakter pribadi sekaligus area kelemahan akademik yang harus saya benahi selama Kelas XI.", reverse: false },
+                    { text: "Saya masih sering mengubah-ubah pilihan jurusan hanya karena ikut-ikutan tren teman sebaya tanpa menganalisis kecocokan diri.", reverse: true },
+                    { text: "Saya yakin mampu mengatasi hambatan belajar apabila berusaha secara konsisten menuju bidang karir pilihan saya.", reverse: false },
+                    { text: "Saya telah mendiskusikan rencana studi lanjut secara terbuka bersama orang tua untuk menyelaraskan harapan keluarga.", reverse: false },
+                    { text: "Saya merasa bingung menentukan keunggulan diri sendiri ketika diminta menjelaskan alasan memilih suatu program studi.", reverse: true }
+                ]
+            },
+            {
+                id: "academic",
+                badge: "DIMENSI 2 DARI 4 • ACADEMIC & PORTFOLIO READINESS",
+                title: "Kesiapan Akademik, Mapel Pendukung & Portofolio",
+                shortName: "Kesiapan Akademik",
+                color: "#10B981",
+                items: [
+                    { text: "Saya menerapkan jadwal belajar terstruktur di Kelas XI untuk menjaga grafik nilai rapor tetap menanjak dari Semester 1 hingga Semester 4.", reverse: false },
+                    { text: "Saya sering menunda persiapan latihan soal seleksi masuk perguruan tinggi karena merasa Kelas XII masih lama.", reverse: true },
+                    { text: "Saya aktif membangun portofolio (lomba olimpiade/karya ilmiah/organisasi/sertifikat kompetensi) yang relevan dengan jurusan target.", reverse: false },
+                    { text: "Saya melatih kemampuan literasi bacaan panjang serta Bahasa Inggris sebagai modal akademik di jenjang perguruan tinggi.", reverse: false },
+                    { text: "Saya menjaga kebugaran fisik, pola tidur, dan manajemen stres saat menghadapi beban tugas sekolah yang padat.", reverse: false },
+                    { text: "DYNAMIC_ACADEMIC", reverse: false }
+                ]
+            },
+            {
+                id: "literacy",
+                badge: "DIMENSI 3 DARI 4 • SELECTION & PATHWAY LITERACY",
+                title: "Literasi Ekosistem Seleksi & Informasi Kampus",
+                shortName: "Literasi Seleksi",
+                color: "#F59E0B",
+                items: [
+                    { text: "Saya memahami perbedaan bobot penilaian antara seleksi berbasis rapor/portofolio dengan seleksi berbasis tes tertulis.", reverse: false },
+                    { text: "Saya mengetahui mata kuliah inti, beban praktikum, serta tantangan akademik pada program studi yang saya incar.", reverse: false },
+                    { text: "Saya belum pernah mengecek daya tampung, tingkat keketatan persaingan, maupun standar skor lolos pada kampus impian saya.", reverse: true },
+                    { text: "Saya memahami prospek lapangan kerja dan relevansi keahlian jurusan pilihan saya dalam 5–10 tahun mendatang.", reverse: false },
+                    { text: "Saya telah mencari informasi skema pembiayaan pendidikan maupun program beasiswa yang tersedia pada kampus target.", reverse: false },
+                    { text: "DYNAMIC_LITERACY", reverse: false }
+                ]
+            },
+            {
+                id: "decision",
+                badge: "DIMENSI 4 DARI 4 • STRATEGIC DECISION-MAKING",
+                title: "Perencanaan Strategis & Pengambilan Keputusan Kelas XI",
+                shortName: "Strategi & Keputusan",
+                color: "#FB7185",
+                items: [
+                    { text: "Saya telah menyiapkan alternatif pilihan yang rasional (Plan B dan Plan C) apabila persaingan di pilihan utama sangat ketat.", reverse: false },
+                    { text: "Saya mudah panik dan kehilangan fokus belajar setiap kali melihat pencapaian teman lain di media sosial.", reverse: true },
+                    { text: "Saya proaktif memanfaatkan layanan konsultasi Guru BK untuk mengevaluasi perkembangan nilai rapor dan peluang jurusan.", reverse: false },
+                    { text: "Saya memiliki target capaian konkret yang terukur untuk diselesaikan sebelum memasuki Kelas XII.", reverse: false },
+                    { text: "Saya siap bertanggung jawab penuh atas disiplin belajar dan konsekuensi dari keputusan karir yang saya pilih.", reverse: false },
+                    { text: "DYNAMIC_DECISION", reverse: false }
+                ]
+            }
+        ];
+
+        const ecosystemDynamicPrompts = {
+            PTN: {
+                DYNAMIC_ACADEMIC: "Saya rutin berlatih soal Penalaran Umum, Literasi, dan Penalaran Matematika (UTBK-SNBT) serta menjaga nilai 2 mapel pendukung SNBP.",
+                DYNAMIC_LITERACY: "Saya memahami aturan pemilihan program studi lintas/serumpun pada SNBP dan SNBT serta ketentuan indeks sekolah.",
+                DYNAMIC_DECISION: "Saya telah memetakan kombinasi pilihan kampus PTN top-tier dan PTN penyeimbang agar tidak terjadi penumpukan risiko."
+            },
+            KEDINASAN: {
+                DYNAMIC_ACADEMIC: "Saya melatih kemampuan Tes Intelegensi Umum (TIU/Matematika), wawasan kebangsaan, serta latihan fisik/kesamaptaan secara rutin.",
+                DYNAMIC_LITERACY: "Saya memahami sistem gugur tahapan Sekolah Kedinasan (SKD BKN, Tes Kesehatan, Kesamaptaan Jasmani, Psikotes, dan Pantukhir).",
+                DYNAMIC_DECISION: "Saya menyiapkan jalur paralel UTBK-SNBT PTN sebagai jaring pengaman mengingat ketatnya sistem gugur Sekolah Kedinasan."
+            },
+            PTLN: {
+                DYNAMIC_ACADEMIC: "Saya secara aktif mempersiapkan sertifikasi bahasa internasional (IELTS/TOEFL/SAT/JLPT) dan menyusun draf esai personal statement.",
+                DYNAMIC_LITERACY: "Saya memahami persyaratan kualifikasi akademik internasional, penyetaraan kurikulum, dan linimasa pendaftaran beasiswa luar negeri (BIM/MEXT/GKS).",
+                DYNAMIC_DECISION: "Saya menyiapkan alternatif kelas internasional PTN (IUP/KKI) atau kampus global mitra sebagai cadangan strategis."
+            },
+            PTS: {
+                DYNAMIC_ACADEMIC: "Saya menjaga konsistensi nilai rapor Semester 1–4 serta mengumpulkan sertifikat non-akademik untuk meraih jalur beasiswa penuh PTS.",
+                DYNAMIC_LITERACY: "Saya memahami jadwal pembukaan jalur bebas tes (PMDK/JPA) gelombang awal dan syarat mempertahankan IPK penerima beasiswa PTS.",
+                DYNAMIC_DECISION: "Saya telah membandingkan akreditasi program studi, fasilitas laboratorium, serta skema beasiswa antar-PTS unggulan pilihan saya."
+            }
+        };
+
+        const likertLabels = [
+            { val: 1, emoji: "😟", label: "Sangat Tidak Sesuai" },
+            { val: 2, emoji: "🤔", label: "Kurang Sesuai" },
+            { val: 3, emoji: "😐", label: "Ragu / Netral" },
+            { val: 4, emoji: "🙂", label: "Sesuai" },
+            { val: 5, emoji: "🔥", label: "Sangat Sesuai" }
+        ];
+
+        // ==========================================
+        // 3. STATE APLIKASI
+        // ==========================================
+        let appState = {
+            profile: {
+                name: "",
+                className: "XI-A",
+                majorTrack: "Saintek / MIPA",
+                school: "MAN 2 Kota Malang",
+                counselor: "Endah Kurniawati, S.Pd",
+                sem1: 86.50,
+                sem2: 88.00,
+                sem3: 89.75,
+                rapor: 88.08,
+                raporDelta: 3.25,
+                raporTrendLabel: "Naik Konsisten",
+                raporTrendType: "UP",
+                subjects: "Matematika & Fisika / Informatika",
+                subjectAvg: 90.50,
+                achievement: 0,
+                language: 1,
+                physical: 2,
+                satStatus: "NONE",
+                satStatusLabel: "Belum Memiliki / Belum Tes",
+                satScore: null,
+                researchStatus: "NONE",
+                researchStatusLabel: "Belum Ada Riset",
+                researchTitle: "",
+                ecosystem: "PTN",
+                university: "",
+                uniTier: 87.5,
+                uniPath: "",
+                cluster: "IT_DATA",
+                prodi: "Teknik Informatika"
+            },
+            activeDimensions: [],
+            currentDimIndex: 0,
+            answers: new Array(24).fill(null),
+            results: null
+        };
+
+        // ==========================================
+        // 4. UTILITAS PARSER ANGKA RAPOR, SAT & RISET
+        // ==========================================
+        function parseRaporScore(rawStr) {
+            if (rawStr === null || rawStr === undefined) {
+                return { num: null, isValid: false, isEmpty: true };
+            }
+            const trimmed = String(rawStr).trim();
+            if (trimmed === "") {
+                return { num: null, isValid: false, isEmpty: true };
+            }
+            let normalized = trimmed.replace(/,/g, ".").replace(/[^0-9.]/g, "");
+            const parts = normalized.split(".");
+            if (parts.length > 2) {
+                normalized = parts[0] + "." + parts.slice(1).join("");
+            }
+            const num = parseFloat(normalized);
+            if (isNaN(num)) {
+                return { num: null, isValid: false, isEmpty: false };
+            }
+            const isValid = num >= 0 && num <= 100;
+            return { num, isValid, isEmpty: false };
+        }
+
+        function formatRaporFieldOnBlur(inputId) {
+            const el = document.getElementById(inputId);
+            if (!el) return;
+            const parsed = parseRaporScore(el.value);
+            if (!parsed.isEmpty && parsed.num !== null) {
+                const clamped = Math.max(0, Math.min(100, parsed.num));
+                el.value = clamped.toFixed(2);
+            }
+            updateRaporAnalytics();
+        }
+
+        function formatGenericScoreOnBlur(inputId, fallbackVal) {
+            const el = document.getElementById(inputId);
+            if (!el) return;
+            const parsed = parseRaporScore(el.value);
+            if (!parsed.isEmpty && parsed.num !== null) {
+                const clamped = Math.max(0, Math.min(100, parsed.num));
+                el.value = clamped.toFixed(2);
+            } else if (fallbackVal !== undefined) {
+                el.value = Number(fallbackVal).toFixed(2);
+            }
+        }
+
+        const satStatusMap = {
+            NONE: "Belum Memiliki / Belum Tes",
+            PREP: "Sedang Persiapan / Terdaftar",
+            CERTIFIED: "Sudah Memiliki Sertifikat SAT"
+        };
+
+        const researchStatusMap = {
+            NONE: "Belum Ada Riset",
+            ONGOING: "Sedang Berjalan / Draft Proposal",
+            COMPLETED: "Selesai / Finalis Lomba / Publikasi"
+        };
+
+        function parseSatScore(rawStr) {
+            if (rawStr === null || rawStr === undefined) {
+                return { num: null, isValid: false, isEmpty: true };
+            }
+            const trimmed = String(rawStr).trim();
+            if (trimmed === "") {
+                return { num: null, isValid: false, isEmpty: true };
+            }
+            let normalized = trimmed.replace(/,/g, ".").replace(/[^0-9.]/g, "");
+            const parts = normalized.split(".");
+            if (parts.length > 2) {
+                normalized = parts[0] + "." + parts.slice(1).join("");
+            }
+            const num = parseFloat(normalized);
+            if (isNaN(num)) {
+                return { num: null, isValid: false, isEmpty: false };
+            }
+            const rounded = Math.round(num);
+            const isValid = rounded >= 400 && rounded <= 1600;
+            return { num: rounded, isValid, isEmpty: false };
+        }
+
+        function handleSatStatusChange() {
+            const status = document.getElementById("input-sat-status").value;
+            const wrapper = document.getElementById("sat-score-wrapper");
+            const scoreInput = document.getElementById("input-sat-score");
+            const errEl = document.getElementById("sat-error-msg");
+
+            if (status === "CERTIFIED") {
+                wrapper.classList.remove("hidden");
+                scoreInput.required = true;
+                updateSatBadge();
+            } else {
+                wrapper.classList.add("hidden");
+                scoreInput.required = false;
+                errEl.classList.add("hidden");
+            }
+        }
+
+        function updateSatBadge() {
+            const inputEl = document.getElementById("input-sat-score");
+            const badgeEl = document.getElementById("sat-tier-badge");
+            const errEl = document.getElementById("sat-error-msg");
+            const parsed = parseSatScore(inputEl.value);
+
+            if (parsed.isEmpty) {
+                badgeEl.textContent = "Rentang 400–1600";
+                badgeEl.className = "text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 border border-inkDark";
+                errEl.classList.add("hidden");
+                inputEl.classList.remove("border-rose-600", "bg-rose-50");
+                return;
+            }
+
+            if (!parsed.isValid) {
+                badgeEl.textContent = "Skor Tidak Valid";
+                badgeEl.className = "text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-rose-200 text-rose-900 border border-rose-600";
+                errEl.classList.remove("hidden");
+                inputEl.classList.add("border-rose-600", "bg-rose-50");
+                return;
+            }
+
+            errEl.classList.add("hidden");
+            inputEl.classList.remove("border-rose-600", "bg-rose-50");
+
+            if (parsed.num >= 1450) {
+                badgeEl.textContent = "Elite Global / Ivy & NUS-NTU";
+                badgeEl.className = "text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-cyberLime text-inkDark border border-inkDark";
+            } else if (parsed.num >= 1350) {
+                badgeEl.textContent = "Sangat Kompetitif PTLN / IUP";
+                badgeEl.className = "text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emeraldPop text-inkDark border border-inkDark";
+            } else if (parsed.num >= 1200) {
+                badgeEl.textContent = "Kompetitif IUP / PTS Global";
+                badgeEl.className = "text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-skyPulse text-inkDark border border-inkDark";
+            } else {
+                badgeEl.textContent = "Modal Dasar (Tingkatkan)";
+                badgeEl.className = "text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amberGold text-inkDark border border-inkDark";
+            }
+        }
+
+        function formatSatScoreOnBlur() {
+            const inputEl = document.getElementById("input-sat-score");
+            const parsed = parseSatScore(inputEl.value);
+            if (!parsed.isEmpty && parsed.num !== null) {
+                const clamped = Math.max(400, Math.min(1600, parsed.num));
+                inputEl.value = String(clamped);
+            }
+            updateSatBadge();
+        }
+
+        function updateResearchPlaceholder() {
+            const cluster = document.getElementById("input-cluster").value;
+            const titleInput = document.getElementById("input-research-title");
+            if (!titleInput) return;
+            const examples = {
+                KEDOKTERAN: "Contoh: Potensi Ekstrak Daun Kelor sebagai Antioksidan Alami pada Model Seluler",
+                IT_DATA: "Contoh: Sistem Deteksi Dini Kualitas Air Berbasis IoT dan Machine Learning",
+                TEKNIK: "Contoh: Optimasi Panel Surya Hibrida Berbasis Mikrokontroler untuk Efisiensi Energi",
+                EKONOMI: "Contoh: Analisis Literasi Keuangan Digital dan Perilaku Paylater pada Pelajar SMA",
+                SOSHUM: "Contoh: Pengaruh Algoritma Media Sosial terhadap Tingkat FOMO Akademik Remaja",
+                PEMERINTAHAN: "Contoh: Pemetaan Spasial Kerentanan Banjir Perkotaan Berbasis Sistem Informasi Geografis"
+            };
+            titleInput.placeholder = examples[cluster] || examples.IT_DATA;
+        }
+
+        function handleResearchStatusChange() {
+            const status = document.getElementById("input-research-status").value;
+            const wrapper = document.getElementById("research-title-wrapper");
+            const titleInput = document.getElementById("input-research-title");
+
+            if (status === "ONGOING" || status === "COMPLETED") {
+                wrapper.classList.remove("hidden");
+                titleInput.required = true;
+                updateResearchPlaceholder();
+            } else {
+                wrapper.classList.add("hidden");
+                titleInput.required = false;
+            }
+        }
+
+        function showToast(msg, icon) {
+            const box = document.getElementById("toast-box");
+            const msgEl = document.getElementById("toast-msg");
+            const iconEl = document.getElementById("toast-icon");
+            if (!box || !msgEl || !iconEl) return;
+            msgEl.textContent = msg;
+            iconEl.textContent = icon || "🔔";
+            box.classList.remove("hidden");
+            clearTimeout(window.__toastTimer);
+            window.__toastTimer = setTimeout(() => {
+                box.classList.add("hidden");
+            }, 3000);
+        }
+
+        // ==========================================
+        // 5. KALKULATOR RAPOR REAL-TIME & GRAFIK SVG
+        // ==========================================
+        function getRaporStats() {
+            const p1 = parseRaporScore(document.getElementById("raporSem1").value);
+            const p2 = parseRaporScore(document.getElementById("raporSem2").value);
+            const p3 = parseRaporScore(document.getElementById("raporSem3").value);
+
+            const validItems = [p1, p2, p3].filter(item => item.isValid && item.num !== null);
+            const validCount = validItems.length;
+            const avg = validCount > 0
+                ? validItems.reduce((sum, item) => sum + item.num, 0) / validCount
+                : 0;
+
+            const s1 = p1.isValid ? p1.num : null;
+            const s2 = p2.isValid ? p2.num : null;
+            const s3 = p3.isValid ? p3.num : null;
+
+            let delta = 0;
+            if (s1 !== null && s3 !== null) {
+                delta = s3 - s1;
+            } else if (s1 !== null && s2 !== null) {
+                delta = s2 - s1;
+            }
+
+            let trendLabel = "Stabil";
+            let trendType = "STABLE";
+            if (s1 !== null && s2 !== null && s3 !== null) {
+                if (s3 > s2 && s2 > s1) {
+                    trendLabel = "Naik Konsisten";
+                    trendType = "UP";
+                } else if (delta > 0.25) {
+                    trendLabel = "Tren Meningkat";
+                    trendType = "UP";
+                } else if (delta < -0.25 || (s3 < s2 && s2 < s1)) {
+                    trendLabel = "Menurun — Perlu Strategi";
+                    trendType = "DOWN";
+                } else {
+                    trendLabel = "Stabil Konsisten";
+                    trendType = "STABLE";
+                }
+            } else if (validCount > 0) {
+                trendLabel = `${validCount} dari 3 Sem Terisi`;
+            } else {
+                trendLabel = "Belum Ada Data";
+            }
+
+            const hasInvalidError = [p1, p2, p3].some(item => !item.isEmpty && !item.isValid);
+            const isCompleteValid = validCount === 3 && !hasInvalidError;
+
+            return {
+                p1, p2, p3,
+                s1, s2, s3,
+                validCount,
+                avg,
+                delta,
+                trendLabel,
+                trendType,
+                hasInvalidError,
+                isCompleteValid
+            };
+        }
+
+        function updateRaporAnalytics() {
+            const stats = getRaporStats();
+
+            [
+                { id: "raporSem1", parsed: stats.p1 },
+                { id: "raporSem2", parsed: stats.p2 },
+                { id: "raporSem3", parsed: stats.p3 }
+            ].forEach(f => {
+                const el = document.getElementById(f.id);
+                if (!el) return;
+                if (!f.parsed.isEmpty && !f.parsed.isValid) {
+                    el.classList.remove("border-inkDark");
+                    el.classList.add("border-rose-600", "bg-rose-50");
+                } else {
+                    el.classList.remove("border-rose-600", "bg-rose-50");
+                    el.classList.add("border-inkDark");
+                }
+            });
+
+            const alertEl = document.getElementById("rapor-validation-alert");
+            if (alertEl) {
+                if (stats.hasInvalidError) {
+                    alertEl.classList.remove("hidden");
+                } else {
+                    alertEl.classList.add("hidden");
+                }
+            }
+
+            const avgEl = document.getElementById("live-rapor-avg");
+            const qualityBadge = document.getElementById("live-rapor-quality-badge");
+            const legendAvgEl = document.getElementById("legend-avg-text");
+
+            if (stats.validCount > 0) {
+                if (avgEl) avgEl.textContent = stats.avg.toFixed(2);
+                if (legendAvgEl) legendAvgEl.textContent = stats.avg.toFixed(2);
+
+                if (qualityBadge) {
+                    if (stats.avg >= 90) {
+                        qualityBadge.textContent = "Sangat Kompetitif (≥ 90)";
+                        qualityBadge.className = "text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-cyberLime text-inkDark";
+                    } else if (stats.avg >= 85) {
+                        qualityBadge.textContent = "Kompetitif (85–89.99)";
+                        qualityBadge.className = "text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-emeraldPop text-inkDark";
+                    } else {
+                        qualityBadge.textContent = "Perlu Penguatan (< 85)";
+                        qualityBadge.className = "text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-amberGold text-inkDark";
+                    }
+                }
+            } else {
+                if (avgEl) avgEl.textContent = "0.00";
+                if (legendAvgEl) legendAvgEl.textContent = "0.00";
+                if (qualityBadge) {
+                    qualityBadge.textContent = "Isi Nilai Sem 1–3";
+                    qualityBadge.className = "text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-slate-600 text-white";
+                }
+            }
+
+            const deltaBadge = document.getElementById("live-rapor-delta-badge");
+            if (deltaBadge) {
+                const signPrefix = stats.delta > 0 ? "+" : "";
+                if (stats.validCount >= 2) {
+                    if (stats.trendType === "UP") {
+                        deltaBadge.textContent = `▲ ${signPrefix}${stats.delta.toFixed(2)} ${stats.trendLabel}`;
+                        deltaBadge.className = "font-display font-bold px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-400";
+                    } else if (stats.trendType === "DOWN") {
+                        deltaBadge.textContent = `▼ ${stats.delta.toFixed(2)} ${stats.trendLabel}`;
+                        deltaBadge.className = "font-display font-bold px-2 py-0.5 rounded-md bg-rose-100 text-rose-800 border border-rose-400";
+                    } else {
+                        deltaBadge.textContent = `■ ${signPrefix}${stats.delta.toFixed(2)} ${stats.trendLabel}`;
+                        deltaBadge.className = "font-display font-bold px-2 py-0.5 rounded-md bg-sky-100 text-sky-900 border border-sky-400";
+                    }
+                } else {
+                    deltaBadge.textContent = "Menunggu minimal 2 semester";
+                    deltaBadge.className = "font-display font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-300";
+                }
+            }
+
+            renderRaporLineChartSVG("step1-trend-svg", stats, 280, 96);
+        }
+
+        function fillSampleRapor() {
+            document.getElementById("raporSem1").value = "86.50";
+            document.getElementById("raporSem2").value = "88.00";
+            document.getElementById("raporSem3").value = "89.75";
+            updateRaporAnalytics();
+            showToast("Contoh nilai progresif (86.50 → 88.00 → 89.75) dimuat!", "✨");
+        }
+
+        function clearRaporInputs() {
+            document.getElementById("raporSem1").value = "";
+            document.getElementById("raporSem2").value = "";
+            document.getElementById("raporSem3").value = "";
+            updateRaporAnalytics();
+            document.getElementById("raporSem1").focus();
+            showToast("Kolom nilai Semester 1–3 dikosongkan. Silakan ketik nilaimu!", "🧹");
+        }
+
+        function renderRaporLineChartSVG(svgId, stats, width, height) {
+            const svg = document.getElementById(svgId);
+            if (!svg) return;
+
+            const rawVals = [stats.s1, stats.s2, stats.s3];
+            const validNums = rawVals.filter(v => v !== null);
+
+            if (validNums.length === 0) {
+                svg.innerHTML = `
+                    <rect x="4" y="4" width="${width - 8}" height="${height - 8}" rx="8" fill="#F8FAFC" />
+                    <text x="${width / 2}" y="${height / 2 + 4}" text-anchor="middle" font-size="11" font-weight="700" fill="#64748B">
+                        Ketik nilai Sem 1, 2, dan 3 untuk melihat grafik tren
+                    </text>
+                `;
+                return;
+            }
+
+            const minV = Math.max(45, Math.min(...validNums) - 4);
+            const maxV = Math.min(100, Math.max(...validNums) + 4);
+            const range = Math.max(6, maxV - minV);
+
+            const padLeft = 36;
+            const padRight = width - 36;
+            const topY = 22;
+            const bottomY = height - 20;
+            const plotH = bottomY - topY;
+
+            const xs = [padLeft, (padLeft + padRight) / 2, padRight];
+            const mapY = (val) => bottomY - ((val - minV) / range) * plotH;
+
+            const avgY = mapY(stats.avg);
+            let html = `
+                <line x1="16" y1="${bottomY + 3}" x2="${width - 16}" y2="${bottomY + 3}" stroke="#CBD5E1" stroke-width="1.5" />
+                <line x1="20" y1="${avgY}" x2="${width - 20}" y2="${avgY}" stroke="#F43F5E" stroke-width="1.5" stroke-dasharray="4 3" />
+                <text x="${width - 22}" y="${Math.max(11, avgY - 4)}" text-anchor="end" font-size="8.5" font-weight="800" fill="#E11D48">
+                    Avg: ${stats.avg.toFixed(2)}
+                </text>
+            `;
+
+            const validPoints = [];
+            rawVals.forEach((v, idx) => {
+                if (v !== null) {
+                    validPoints.push({ x: xs[idx], y: mapY(v), val: v, idx });
+                }
+            });
+
+            if (validPoints.length >= 2) {
+                const polyStr = validPoints.map(pt => `${pt.x},${pt.y}`).join(" ");
+                html += `<polyline points="${polyStr}" fill="none" stroke="#4F46E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />`;
+            }
+
+            ["Sem 1", "Sem 2", "Sem 3"].forEach((lbl, idx) => {
+                html += `<text x="${xs[idx]}" y="${height - 5}" text-anchor="middle" font-size="9.5" font-weight="700" fill="#475569">${lbl}</text>`;
+            });
+
+            validPoints.forEach(pt => {
+                html += `
+                    <circle cx="${pt.x}" cy="${pt.y}" r="5" fill="#BEF264" stroke="#0F172A" stroke-width="2" />
+                    <text x="${pt.x}" y="${Math.max(12, pt.y - 8)}" text-anchor="middle" font-size="10" font-weight="800" fill="#0F172A">
+                        ${pt.val.toFixed(2)}
+                    </text>
+                `;
+            });
+
+            svg.innerHTML = html;
+        }
+
+        // ==========================================
+        // 6. KONTROL EKOSISTEM KAMPUS & RUMPUN PRODI
+        // ==========================================
+        function selectEcosystem(ecoKey) {
+            appState.profile.ecosystem = ecoKey;
+            ["PTN", "KEDINASAN", "PTLN", "PTS"].forEach(k => {
+                const btn = document.getElementById(`eco-btn-${k}`);
+                if (!btn) return;
+                if (k === ecoKey) {
+                    btn.classList.add("active");
+                } else {
+                    btn.classList.remove("active");
+                }
+            });
+
+            const uniSelect = document.getElementById("input-university");
+            const list = universityDatabase[ecoKey];
+            uniSelect.innerHTML = list.map((u, idx) => `
+                <option value="${idx}">${u.name === "CUSTOM" ? "✏️ Ketik Nama Kampus Lainnya..." : u.name}</option>
+            `).join("");
+
+            if (ecoKey === "KEDINASAN") {
+                document.getElementById("input-cluster").value = "PEMERINTAHAN";
+                handleClusterChange();
+            }
+            handleUniChange();
+        }
+
+        function handleUniChange() {
+            const ecoKey = appState.profile.ecosystem;
+            const idx = parseInt(document.getElementById("input-university").value, 10) || 0;
+            const selectedObj = universityDatabase[ecoKey][idx];
+            const customInput = document.getElementById("input-university-custom");
+
+            if (selectedObj && selectedObj.name === "CUSTOM") {
+                customInput.classList.remove("hidden");
+                customInput.required = true;
+            } else {
+                customInput.classList.add("hidden");
+                customInput.required = false;
+            }
+            updateBenchmarkBanner();
+        }
+
+        function handleClusterChange() {
+            const clusterKey = document.getElementById("input-cluster").value;
+            const info = clusterProdiDatabase[clusterKey] || clusterProdiDatabase.IT_DATA;
+            const presetSelect = document.getElementById("input-prodi-preset");
+            const prodiInput = document.getElementById("input-prodi-name");
+
+            if (presetSelect) {
+                presetSelect.innerHTML = info.prodis.map(p => `<option value="${p}">${p}</option>`).join("") +
+                    `<option value="CUSTOM_PRODI">✏️ Ketik Program Studi Lainnya...</option>`;
+                prodiInput.value = info.prodis[0];
+            }
+            updateResearchPlaceholder();
+            updateBenchmarkBanner();
+        }
+
+        function handleProdiPresetChange() {
+            const presetVal = document.getElementById("input-prodi-preset").value;
+            const prodiInput = document.getElementById("input-prodi-name");
+            if (presetVal === "CUSTOM_PRODI") {
+                prodiInput.value = "";
+                prodiInput.focus();
+            } else {
+                prodiInput.value = presetVal;
+            }
+        }
+
+        function updateBenchmarkBanner() {
+            const ecoKey = appState.profile.ecosystem;
+            const idx = parseInt(document.getElementById("input-university").value, 10) || 0;
+            const uniObj = universityDatabase[ecoKey][idx] || universityDatabase[ecoKey][0];
+            const clusterKey = document.getElementById("input-cluster").value;
+            const clusterObj = clusterProdiDatabase[clusterKey] || clusterProdiDatabase.IT_DATA;
+
+            const effectiveTier = Math.min(96.0, uniObj.tier + clusterObj.tierBoost);
+            const benchTextEl = document.getElementById("benchmark-text");
+            const benchTestEl = document.getElementById("benchmark-test-text");
+
+            if (benchTextEl) {
+                benchTextEl.textContent = `Rapor ideal ≥ ${effectiveTier.toFixed(1)} • Mapel Pendukung: ${clusterObj.idealSubjects}`;
+            }
+            if (benchTestEl) {
+                benchTestEl.textContent = `Standar Jalur: ${uniObj.minUtbk}`;
+            }
+        }
+
+        function buildAdaptiveDimensions(ecoKey) {
+            const dyn = ecosystemDynamicPrompts[ecoKey] || ecosystemDynamicPrompts.PTN;
+            return baseCareerDimensions.map(dim => ({
+                ...dim,
+                items: dim.items.map(it => ({
+                    text: dyn[it.text] ? dyn[it.text] : it.text,
+                    reverse: it.reverse
+                }))
+            }));
+        }
+
+        // ==========================================
+        // 7. NAVIGASI STEP 1 -> STEP 2 & ASESMEN 24 BUTIR
+        // ==========================================
+        function goToStep2(e) {
+            e.preventDefault();
+            const name = document.getElementById("input-name").value.trim();
+            const cls = document.getElementById("input-class").value.trim().toUpperCase();
+            const prodi = document.getElementById("input-prodi-name").value.trim();
+            const stats = getRaporStats();
+
+            if (!name || !cls || !prodi) {
+                showToast("Mohon lengkapi Nama, Kelas, dan Program Studi targetmu!", "⚠️");
+                return;
+            }
+
+            if (!stats.isCompleteValid) {
+                showToast("Pastikan ketiga nilai rapor (Semester 1, 2, dan 3) terisi angka valid 0–100!", "⚠️");
+                return;
+            }
+
+            const subjParsed = parseRaporScore(document.getElementById("input-subject-avg").value);
+            const subjectAvgVal = subjParsed.isValid ? subjParsed.num : stats.avg;
+
+            // Validasi SAT
+            const satStatus = document.getElementById("input-sat-status").value;
+            let satScoreVal = null;
+            if (satStatus === "CERTIFIED") {
+                const satParsed = parseSatScore(document.getElementById("input-sat-score").value);
+                if (!satParsed.isValid) {
+                    showToast("Masukkan Skor SAT Total yang valid antara 400 hingga 1600!", "⚠️");
+                    document.getElementById("input-sat-score").focus();
+                    return;
+                }
+                satScoreVal = satParsed.num;
+            }
+
+            // Validasi Riset & Judul Riset
+            const researchStatus = document.getElementById("input-research-status").value;
+            let researchTitleVal = "";
+            if (researchStatus === "ONGOING" || researchStatus === "COMPLETED") {
+                researchTitleVal = document.getElementById("input-research-title").value.trim();
+                if (!researchTitleVal) {
+                    showToast("Tuliskan Judul Riset / Karya Ilmiahmu terlebih dahulu!", "⚠️");
+                    document.getElementById("input-research-title").focus();
+                    return;
+                }
+            }
+
+            const ecoKey = appState.profile.ecosystem;
+            const uniIdx = parseInt(document.getElementById("input-university").value, 10) || 0;
+            const uniObj = universityDatabase[ecoKey][uniIdx];
+            const uniFinalName = uniObj.name === "CUSTOM"
+                ? (document.getElementById("input-university-custom").value.trim() || "Perguruan Tinggi Pilihan")
+                : uniObj.name;
+
+            const clusterKey = document.getElementById("input-cluster").value;
+            const clusterObj = clusterProdiDatabase[clusterKey] || clusterProdiDatabase.IT_DATA;
+
+            appState.profile = {
+                name,
+                className: cls,
+                majorTrack: document.getElementById("input-major-track").value,
+                school: document.getElementById("input-school").value.trim() || "MAN 2 Kota Malang",
+                counselor: document.getElementById("input-counselor").value.trim() || "Endah Kurniawati, S.Pd",
+                sem1: stats.s1,
+                sem2: stats.s2,
+                sem3: stats.s3,
+                rapor: Number(stats.avg.toFixed(2)),
+                raporDelta: Number(stats.delta.toFixed(2)),
+                raporTrendLabel: stats.trendLabel,
+                raporTrendType: stats.trendType,
+                subjects: document.getElementById("input-subjects").value,
+                subjectAvg: Number(subjectAvgVal.toFixed(2)),
+                achievement: parseInt(document.getElementById("input-achievement").value, 10),
+                language: parseInt(document.getElementById("input-language").value, 10),
+                physical: parseInt(document.getElementById("input-physical").value, 10),
+                satStatus,
+                satStatusLabel: satStatusMap[satStatus],
+                satScore: satScoreVal,
+                researchStatus,
+                researchStatusLabel: researchStatusMap[researchStatus],
+                researchTitle: researchTitleVal,
+                ecosystem: ecoKey,
+                university: uniFinalName,
+                uniTier: Math.min(96.0, uniObj.tier + clusterObj.tierBoost),
+                uniPath: uniObj.path,
+                cluster: clusterKey,
+                prodi
+            };
+
+            appState.activeDimensions = buildAdaptiveDimensions(ecoKey);
+            if (appState.answers.length !== 24) {
+                appState.answers = new Array(24).fill(null);
+            }
+
+            document.getElementById("step-1-section").classList.add("hidden");
+            document.getElementById("step-2-section").classList.remove("hidden");
+            updateNavStepper(2);
+
+            appState.currentDimIndex = 0;
+            renderDimensionQuestions();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function updateNavStepper(stepNum) {
+            [1, 2, 3].forEach(s => {
+                const el = document.getElementById(`nav-step-${s}`);
+                if (!el) return;
+                if (s === stepNum) {
+                    el.className = "px-2.5 py-1 rounded-lg bg-cyberLime border border-inkDark text-inkDark";
+                } else if (s < stepNum) {
+                    el.className = "px-2.5 py-1 rounded-lg bg-emerald-100 border border-emerald-500 text-emerald-900";
+                } else {
+                    el.className = "px-2.5 py-1 rounded-lg text-slate-500";
+                }
+            });
+        }
+
+        function switchDimensionTab(dimIdx) {
+            appState.currentDimIndex = dimIdx;
+            renderDimensionQuestions();
+        }
+
+        function renderDimensionQuestions() {
+            const dimIdx = appState.currentDimIndex;
+            const dim = appState.activeDimensions[dimIdx];
+
+            document.getElementById("dim-badge").textContent = dim.badge;
+            document.getElementById("dim-title").textContent = dim.title;
+
+            [0, 1, 2, 3].forEach(i => {
+                const tab = document.getElementById(`dim-tab-${i}`);
+                const startQ = i * 6;
+                const dimAnswered = appState.answers.slice(startQ, startQ + 6).filter(v => v !== null).length;
+
+                if (i === dimIdx) {
+                    tab.className = "py-2 px-3 rounded-xl border-2 border-inkDark font-bold text-xs text-left bg-cyberLime text-inkDark shadow-neo-sm";
+                } else if (dimAnswered === 6) {
+                    tab.className = "py-2 px-3 rounded-xl border-2 border-emerald-600 font-bold text-xs text-left bg-emerald-50 text-emerald-900";
+                } else {
+                    tab.className = "py-2 px-3 rounded-xl border-2 border-slate-300 font-bold text-xs text-left bg-slate-50 text-slate-600";
+                }
+            });
+
+            const container = document.getElementById("questions-list-container");
+            container.innerHTML = "";
+            const baseIndex = dimIdx * 6;
+
+            dim.items.forEach((itemObj, offset) => {
+                const globalIdx = baseIndex + offset;
+                const currentVal = appState.answers[globalIdx];
+
+                const card = document.createElement("div");
+                card.className = "neo-card rounded-2xl p-4 sm:p-5 bg-white space-y-3";
+                card.innerHTML = `
+                    <div class="flex items-start gap-3">
+                        <span class="w-7 h-7 rounded-lg bg-inkDark text-cyberLime font-display font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                            ${globalIdx + 1}
+                        </span>
+                        <p class="font-semibold text-sm sm:text-base text-inkDark leading-snug">
+                            ${itemObj.text}
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-5 gap-1.5 sm:gap-2.5 pt-1">
+                        ${likertLabels.map(opt => `
+                            <button type="button" onclick="selectLikertAnswer(${globalIdx}, ${opt.val})"
+                                class="likert-btn rounded-xl py-2 px-1 sm:px-2 flex flex-col items-center justify-center gap-0.5 cursor-pointer ${currentVal === opt.val ? 'selected' : 'bg-slate-50 hover:bg-indigo-50 text-inkDark'}">
+                                <span class="text-lg sm:text-xl">${opt.emoji}</span>
+                                <span class="text-[10px] sm:text-xs font-bold leading-tight text-center">${opt.label}</span>
+                            </button>
+                        `).join("")}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            const prevBtn = document.getElementById("btn-prev-dim");
+            prevBtn.textContent = dimIdx === 0 ? "⬅️ Kembali ke Profil" : "⬅️ Dimensi Sebelumnya";
+
+            const nextBtn = document.getElementById("btn-next-dim");
+            if (dimIdx === 3) {
+                nextBtn.innerHTML = `<span>🎯 Hitung Rasionalisasi & Lihat Hasil Akhir!</span>`;
+                nextBtn.className = "neo-btn bg-cyberLime hover:bg-lime-300 text-inkDark font-display font-bold text-sm sm:text-base px-6 py-3 rounded-xl flex items-center gap-2";
+            } else {
+                nextBtn.innerHTML = `<span>Simpan & Lanjut Dimensi ${dimIdx + 2}</span> <span>➡️</span>`;
+                nextBtn.className = "neo-btn bg-electricIndigo text-white font-display font-bold text-sm sm:text-base px-6 py-3 rounded-xl flex items-center gap-2";
+            }
+
+            updateAssessmentProgress();
+        }
+
+        function selectLikertAnswer(globalIdx, val) {
+            appState.answers[globalIdx] = val;
+            renderDimensionQuestions();
+        }
+
+        function updateAssessmentProgress() {
+            const answeredCount = appState.answers.filter(v => v !== null).length;
+            const pct = Math.round((answeredCount / 24) * 100);
+            document.getElementById("assessment-progress-text").textContent = `${answeredCount} / 24 Terjawab`;
+            document.getElementById("assessment-progress-bar").style.width = `${pct}%`;
+        }
+
+        function autoFillSimulation() {
+            let idx = 0;
+            appState.activeDimensions.forEach(dim => {
+                dim.items.forEach(itemObj => {
+                    appState.answers[idx] = itemObj.reverse ? 1 : 4;
+                    idx++;
+                });
+            });
+            renderDimensionQuestions();
+            showToast("Simulasi 24 butir terisi otomatis (Konsistensi 99%)!", "⚡");
+        }
+
+        function handlePrevDimension() {
+            if (appState.currentDimIndex > 0) {
+                appState.currentDimIndex--;
+                renderDimensionQuestions();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            } else {
+                document.getElementById("step-2-section").classList.add("hidden");
+                document.getElementById("step-1-section").classList.remove("hidden");
+                updateNavStepper(1);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        }
+
+        function handleNextDimension() {
+            const startQ = appState.currentDimIndex * 6;
+            const slice = appState.answers.slice(startQ, startQ + 6);
+            if (slice.includes(null)) {
+                showToast("Lengkapi 6 jawaban di dimensi ini terlebih dahulu ya!", "⚠️");
+                return;
+            }
+
+            if (appState.currentDimIndex < 3) {
+                appState.currentDimIndex++;
+                renderDimensionQuestions();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            } else {
+                if (appState.answers.includes(null)) {
+                    showToast("Masih ada pertanyaan yang belum terjawab di dimensi lain!", "⚠️");
+                    return;
+                }
+                calculateRationalization();
+            }
+        }
+
+        // ==========================================
+        // 8. MESIN RASIONALISASI MULTIFAKTOR (100 POIN TERKALIBRASI)
+        // ==========================================
+        function calculateRationalization() {
+            const liveStats = getRaporStats();
+            if (liveStats.isCompleteValid) {
+                appState.profile.sem1 = liveStats.s1;
+                appState.profile.sem2 = liveStats.s2;
+                appState.profile.sem3 = liveStats.s3;
+                appState.profile.rapor = Number(liveStats.avg.toFixed(2));
+                appState.profile.raporDelta = Number(liveStats.delta.toFixed(2));
+                appState.profile.raporTrendLabel = liveStats.trendLabel;
+                appState.profile.raporTrendType = liveStats.trendType;
+            }
+
+            const p = appState.profile;
+
+            // A. Hitung Skor 4 Dimensi Kesiapan Karir dengan Reverse-Scoring
+            let reverseConsistencyHits = 0;
+            let totalReverseItems = 0;
+
+            const dimScores = appState.activeDimensions.map((dim, idx) => {
+                const start = idx * 6;
+                let rawSum = 0;
+
+                dim.items.forEach((itemObj, offset) => {
+                    const userVal = appState.answers[start + offset];
+                    const scoredVal = itemObj.reverse ? (6 - userVal) : userVal;
+                    rawSum += scoredVal;
+
+                    if (itemObj.reverse) {
+                        totalReverseItems++;
+                        if (scoredVal >= 3) reverseConsistencyHits++;
+                    }
+                });
+
+                const pct = Math.round((rawSum / 30) * 100);
+                return {
+                    id: dim.id,
+                    shortName: dim.shortName,
+                    title: dim.title,
+                    color: dim.color,
+                    raw: rawSum,
+                    pct
+                };
+            });
+
+            const consistencyScore = Math.min(99, Math.round(92 + (reverseConsistencyHits / Math.max(1, totalReverseItems)) * 7));
+            const totalCareerPct = Math.round(dimScores.reduce((acc, d) => acc + d.pct, 0) / 4);
+
+            let careerStatus = "Siap Tempur (Ready to Launch)";
+            if (totalCareerPct < 65) careerStatus = "Fase Eksplorasi (Butuh Pendampingan Intensif)";
+            else if (totalCareerPct < 80) careerStatus = "On-Track (Perlu Akselerasi Kelas XI)";
+
+            // B. Mesin Rasionalisasi Perguruan Tinggi (5 Komponen = 100 Poin)
+            // 1. Rata-rata Rapor Sem 1-3 (40 poin)
+            const raporPoints = Math.max(0, Math.min(40, ((p.rapor - 70) / 28) * 40));
+
+            // 2. Tren Kenaikan Rapor Sem 1 -> Sem 3 (10 poin)
+            let trendPoints = 5.5;
+            if (p.sem3 > p.sem2 && p.sem2 > p.sem1) {
+                trendPoints = Math.min(10, 8.5 + (p.raporDelta * 0.4));
+            } else if (p.raporDelta > 0.25) {
+                trendPoints = 7.8;
+            } else if (p.raporDelta >= -0.25) {
+                trendPoints = 6.2;
+            } else if (p.raporDelta > -1.5) {
+                trendPoints = 4.0;
+            } else {
+                trendPoints = 2.0;
+            }
+
+            // 3. Skor Psikometrik Kesiapan Karir (25 poin)
+            const careerPoints = (totalCareerPct / 100) * 25;
+
+            // 4. Portofolio / Bahasa / Fisik / SAT / Riset sesuai Ekosistem (15 poin)
+            let satBonus = 0;
+            if (p.satStatus === "CERTIFIED" && p.satScore !== null) {
+                if (p.ecosystem === "PTLN") {
+                    satBonus = p.satScore >= 1450 ? 6.0 : p.satScore >= 1350 ? 4.8 : p.satScore >= 1200 ? 3.2 : 1.5;
+                } else if (p.ecosystem === "PTN" || p.ecosystem === "PTS") {
+                    satBonus = p.satScore >= 1350 ? 3.2 : p.satScore >= 1200 ? 2.2 : 1.2;
+                } else {
+                    satBonus = p.satScore >= 1300 ? 1.8 : 1.0;
+                }
+            } else if (p.satStatus === "PREP") {
+                satBonus = p.ecosystem === "PTLN" ? 1.2 : 0.5;
+            }
+
+            let researchBonus = 0;
+            if (p.researchStatus === "COMPLETED") {
+                researchBonus = p.ecosystem === "PTLN" ? 3.8 : 3.2;
+            } else if (p.researchStatus === "ONGOING") {
+                researchBonus = p.ecosystem === "PTLN" ? 2.0 : 1.6;
+            }
+
+            let basePortoPoints = 0;
+            if (p.ecosystem === "PTLN") {
+                basePortoPoints = (p.language / 4) * 7.5 + (p.achievement / 5) * 3.5;
+            } else if (p.ecosystem === "KEDINASAN") {
+                basePortoPoints = (p.physical / 4) * 9.5 + (p.achievement / 5) * 4.5;
+            } else {
+                basePortoPoints = (p.achievement / 5) * 8.5 + (p.language / 4) * 4.0;
+            }
+            const portoPoints = Math.min(15, basePortoPoints + satBonus + researchBonus);
+
+            // 5. Linearitas Mapel Pendukung, Nilainya & Relevansi Riset (10 poin)
+            let baseMapel = 6.2;
+            const subj = p.subjects;
+            const clus = p.cluster;
+            if (
+                (clus === "KEDOKTERAN" && subj.includes("Biologi")) ||
+                ((clus === "IT_DATA" || clus === "TEKNIK") && (subj.includes("Matematika & Fisika") || subj.includes("Informatika"))) ||
+                (clus === "EKONOMI" && subj.includes("Ekonomi")) ||
+                ((clus === "SOSHUM" || clus === "PEMERINTAHAN") && (subj.includes("Sosiologi") || subj.includes("Bahasa") || subj.includes("Ekonomi")))
+            ) {
+                baseMapel = 8.2;
+            } else if (subj.includes("Matematika")) {
+                baseMapel = 7.2;
+            }
+            const subjBonus = p.subjectAvg >= 90 ? 1.3 : p.subjectAvg >= 85 ? 0.8 : 0.3;
+            const researchAlignmentBonus = p.researchStatus === "COMPLETED" ? 0.8 : p.researchStatus === "ONGOING" ? 0.4 : 0;
+            const mapelPoints = Math.min(10, baseMapel + subjBonus + researchAlignmentBonus);
+
+            // Kalibrasi dengan tingkat keketatan kampus target (uniTier)
+            const rawComposite = raporPoints + trendPoints + careerPoints + portoPoints + mapelPoints;
+            const tierDifficultyOffset = (p.uniTier - 86.0) * 1.45;
+            const chancePct = Math.max(28, Math.min(96, Math.round(rawComposite - tierDifficultyOffset)));
+
+            let zone = "HIJAU";
+            let zoneLabel = "ZONA HIJAU • RASIONAL & KOMPETITIF";
+            if (chancePct < 60) {
+                zone = "MERAH";
+                zoneLabel = "ZONA MERAH • KEKETATAN TINGGI (PERLU PLAN B)";
+            } else if (chancePct < 76) {
+                zone = "KUNING";
+                zoneLabel = "ZONA KUNING • MODERAT (PERLU PENGUATAN)";
+            }
+
+            const plans = buildSmartPlans(p, chancePct, zone);
+
+            appState.results = {
+                dimScores,
+                consistencyScore,
+                totalCareerPct,
+                careerStatus,
+                compRapor: Math.round(raporPoints),
+                compTrend: Math.round(trendPoints),
+                compCareer: Math.round(careerPoints),
+                compPorto: Math.round(portoPoints),
+                compMapel: Math.round(mapelPoints),
+                chancePct,
+                zone,
+                zoneLabel,
+                plans,
+                docId: `BK-XI/${new Date().getFullYear()}/${Math.floor(100 + Math.random() * 899)}`,
+                dateStr: ""
+            };
+
+            renderResultsView();
+        }
+
+        function buildSmartPlans(p, chancePct, zone) {
+            const planA = {
+                tag: "PLAN A • TARGET UTAMA",
+                eco: p.ecosystem,
+                campus: p.university,
+                prodi: p.prodi,
+                chance: `${chancePct}% (${zone})`,
+                note: `Jalur: ${p.uniPath}. Pertahankan tren rapor Semester 4–5 dan kunci portofolio pendukung.`
+            };
+
+            let planB = {};
+            if (p.ecosystem === "PTN") {
+                planB = {
+                    tag: "PLAN B • PENYEIMBANG RASIONAL",
+                    eco: "PTN / KEDINASAN",
+                    campus: p.rapor >= 87 ? "UB / UNDIP / UM (Pilihan 2 SNBT)" : "UM / UIN Malang / Politeknik Negeri",
+                    prodi: `${p.prodi} (Rumpun Serumpun)`,
+                    chance: `${Math.min(92, chancePct + 12)}% (ZONA HIJAU)`,
+                    note: "Gunakan strategi 1 kampus top + 1 kampus tier-2 rasional pada SNBP/SNBT, atau ikuti SPMB Kedinasan (STAN/STIS) berbasis tes SKD."
+                };
+            } else if (p.ecosystem === "KEDINASAN") {
+                planB = {
+                    tag: "PLAN B • CADANGAN PTN (SNBT)",
+                    eco: "PTN UNGGULAN",
+                    campus: "UB / UNAIR / ITS / UNDIP",
+                    prodi: p.prodi,
+                    chance: `${Math.min(90, chancePct + 11)}% (ZONA HIJAU)`,
+                    note: "Karena Sekolah Kedinasan memakai sistem gugur (SKD & Samapta), wajib mendaftar SNBT PTN sebagai jaring pengaman paralel."
+                };
+            } else if (p.ecosystem === "PTLN") {
+                planB = {
+                    tag: "PLAN B • DUAL-TRACK PTN (IUP)",
+                    eco: "PTN KELAS INTERNASIONAL",
+                    campus: "IUP UGM / KKI UI / IUP UNAIR / UB",
+                    prodi: `${p.prodi} (International Class)`,
+                    chance: `${Math.min(91, chancePct + 14)}% (ZONA HIJAU)`,
+                    note: "Program IUP PTN menawarkan eksposur global & double degree dengan tingkat persaingan lebih terukur dibanding beasiswa luar negeri penuh."
+                };
+            } else {
+                planB = {
+                    tag: "PLAN B • TARGET UPGRADE PTN",
+                    eco: "PTN (SNBT-UTBK)",
+                    campus: "Universitas Brawijaya / UM / UIN Malang",
+                    prodi: p.prodi,
+                    chance: `${Math.min(86, chancePct + 5)}% (KOMPETITIF)`,
+                    note: "Dengan persiapan UTBK sejak Kelas XI, kamu punya peluang besar menembus PTN sekaligus mengamankan kursi beasiswa PTS."
+                };
+            }
+
+            const planC = {
+                tag: "PLAN C • JARING PENGAMAN BEASISWA",
+                eco: "PTS UNGGULAN",
+                campus: p.ecosystem === "PTS" ? "Telkom Univ / UMM / UII (Jalur Beasiswa)" : "BINUS / Telkom University / UMM",
+                prodi: p.prodi,
+                chance: "92% (ZONA HIJAU AMAN)",
+                note: "Manfaatkan jalur bebas tes menggunakan nilai rapor Semester 1–4 pada gelombang awal (Early Bird) untuk meraih potongan/beasiswa penuh."
+            };
+
+            return [planA, planB, planC];
+        }
+
+        // ==========================================
+        // 9. RENDER HALAMAN HASIL & VISUALISASI RADAR
+        // ==========================================
+        function renderResultsView() {
+            document.getElementById("step-2-section").classList.add("hidden");
+            document.getElementById("step-3-section").classList.remove("hidden");
+            updateNavStepper(3);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+
+            const p = appState.profile;
+            const r = appState.results;
+
+            const today = new Date();
+            const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+            const formattedDate = `${today.getDate()} ${months[today.getMonth()]} ${today.getFullYear()}`;
+            r.dateStr = formattedDate;
+
+            document.getElementById("rep-school-header").textContent = `${p.school} • Layanan Bimbingan dan Konseling Karir Kelas XI`;
+            document.getElementById("rep-doc-id").textContent = r.docId;
+            document.getElementById("rep-date").textContent = formattedDate;
+            document.getElementById("rep-consistency").textContent = `${r.consistencyScore}% Konsisten`;
+
+            document.getElementById("rep-name").textContent = p.name;
+            document.getElementById("rep-class").textContent = `${p.className} (${p.majorTrack})`;
+            document.getElementById("rep-counselor").textContent = p.counselor;
+            document.getElementById("rep-sem1").textContent = p.sem1.toFixed(2);
+            document.getElementById("rep-sem2").textContent = p.sem2.toFixed(2);
+            document.getElementById("rep-sem3").textContent = p.sem3.toFixed(2);
+            document.getElementById("rep-rapor").textContent = p.rapor.toFixed(2);
+            document.getElementById("rep-trend-badge").textContent = `${p.raporTrendLabel} (${p.raporDelta >= 0 ? "+" : ""}${p.raporDelta.toFixed(2)})`;
+            document.getElementById("rep-subjects").textContent = `${p.subjects} (${p.subjectAvg.toFixed(2)})`;
+
+            renderRaporLineChartSVG("trend-svg", {
+                s1: p.sem1,
+                s2: p.sem2,
+                s3: p.sem3,
+                avg: p.rapor
+            }, 240, 94);
+
+            const achLabels = ["Belum ada", "Tingkat Sekolah", "Tingkat Kota/Kab", "Tingkat Provinsi", "Tingkat Nasional", "Internasional"];
+            const langLabels = ["Dasar", "Menengah", "Mahir (TOEFL >500)", "Sertifikat Resmi"];
+            document.getElementById("rep-porto").textContent = `${achLabels[p.achievement]} • Bahasa: ${langLabels[p.language - 1]}`;
+
+            const satDisplayStr = p.satStatus === "CERTIFIED" && p.satScore !== null
+                ? `Skor ${p.satScore}/1600 (${p.satScore >= 1350 ? "Sangat Kompetitif" : "Tersertifikasi"})`
+                : p.satStatusLabel;
+            const researchDisplayStr = (p.researchStatus === "ONGOING" || p.researchStatus === "COMPLETED") && p.researchTitle
+                ? `${p.researchStatusLabel}: "${p.researchTitle}"`
+                : p.researchStatusLabel;
+
+            document.getElementById("rep-sat").textContent = p.satStatus === "CERTIFIED" && p.satScore !== null
+                ? `Skor ${p.satScore} / 1600`
+                : p.satStatusLabel;
+            document.getElementById("rep-research").textContent = (p.researchStatus === "ONGOING" || p.researchStatus === "COMPLETED")
+                ? `${p.researchStatus === "COMPLETED" ? "Selesai/Finalis" : "Sedang Berjalan"}`
+                : "Belum Ada Riset";
+
+            document.getElementById("rep-featured-sat-line").innerHTML = `• <strong>Sertifikat SAT:</strong> ${satDisplayStr}`;
+            document.getElementById("rep-featured-research-line").innerHTML = `• <strong>Riset / Karya Ilmiah:</strong> ${researchDisplayStr}`;
+
+            const portoBadgeEl = document.getElementById("rep-porto-badge");
+            if (p.satStatus === "CERTIFIED" || p.researchStatus !== "NONE") {
+                portoBadgeEl.textContent = "Nilai Tambah Aktif";
+                portoBadgeEl.className = "text-[10px] font-extrabold px-2 py-0.5 rounded bg-cyberLime border border-inkDark text-inkDark";
+            } else {
+                portoBadgeEl.textContent = "Opsional / Belum Ada";
+                portoBadgeEl.className = "text-[10px] font-extrabold px-2 py-0.5 rounded bg-slate-200 border border-slate-400 text-slate-700";
+            }
+
+            // Styling Zona Hero Rasionalisasi
+            const heroBox = document.getElementById("rationalization-hero-box");
+            const zoneBadge = document.getElementById("rat-zone-badge");
+            const ratPctEl = document.getElementById("rat-percentage");
+
+            if (r.zone === "HIJAU") {
+                heroBox.className = "rounded-2xl border-2.5 border-inkDark p-4 sm:p-5 bg-emerald-50 flex flex-col md:flex-row items-center justify-between gap-4";
+                zoneBadge.className = "bg-emeraldPop text-inkDark border border-inkDark font-extrabold text-xs px-2.5 py-0.5 rounded-lg";
+                ratPctEl.className = "font-display font-bold text-3xl sm:text-4xl text-emerald-700";
+            } else if (r.zone === "KUNING") {
+                heroBox.className = "rounded-2xl border-2.5 border-inkDark p-4 sm:p-5 bg-amber-50 flex flex-col md:flex-row items-center justify-between gap-4";
+                zoneBadge.className = "bg-amberGold text-inkDark border border-inkDark font-extrabold text-xs px-2.5 py-0.5 rounded-lg";
+                ratPctEl.className = "font-display font-bold text-3xl sm:text-4xl text-amber-700";
+            } else {
+                heroBox.className = "rounded-2xl border-2.5 border-inkDark p-4 sm:p-5 bg-rose-50 flex flex-col md:flex-row items-center justify-between gap-4";
+                zoneBadge.className = "bg-coralPink text-inkDark border border-inkDark font-extrabold text-xs px-2.5 py-0.5 rounded-lg";
+                ratPctEl.className = "font-display font-bold text-3xl sm:text-4xl text-rose-700";
+            }
+
+            zoneBadge.textContent = r.zoneLabel;
+            ratPctEl.textContent = `${r.chancePct}%`;
+            document.getElementById("rat-eco-tag").textContent = p.ecosystem;
+            document.getElementById("rat-uni-title").textContent = `${p.university} — ${p.prodi}`;
+
+            let narrative = "";
+            if (r.zone === "HIJAU") {
+                narrative = `Kombinasi rata-rata rapor Semester 1–3 (${p.rapor.toFixed(2)}), grafik ${p.raporTrendLabel} (${p.raporDelta >= 0 ? "+" : ""}${p.raporDelta.toFixed(2)}), serta skor psikometrik kesiapan karir (${r.totalCareerPct}%) menunjukkan posisi kompetitif dan rasional untuk bersaing di ${p.university} (${p.prodi}). Pertahankan tren kenaikan di Semester 4–5!`;
+            } else if (r.zone === "KUNING") {
+                narrative = `Target ${p.university} (${p.prodi}) berada pada zona moderat/kompetitif. Rata-rata rapor ${p.rapor.toFixed(2)} sudah menjadi modal awal, namun perlu penguatan skor tes potensi akademik (UTBK/SKD/SAT) serta peningkatan tren nilai rapor di Semester 4 agar peluang lolos menembus zona aman.`;
+            } else {
+                narrative = `Program studi ${p.prodi} di ${p.university} memiliki keketatan sangat tinggi dibanding profil nilai saat ini (${p.rapor.toFixed(2)}). Kamu tetap dapat memperjuangkannya melalui jalur tes tertulis (UTBK/SKD/Mandiri) dengan latihan intensif sejak Kelas XI, namun sangat disarankan mengamankan Plan B dan Plan C.`;
+            }
+            document.getElementById("rat-narrative").textContent = narrative;
+
+            document.getElementById("comp-rapor").textContent = `${r.compRapor}/40`;
+            document.getElementById("comp-trend").textContent = `+${r.compTrend}/10`;
+            document.getElementById("comp-career").textContent = `${r.compCareer}/25`;
+            document.getElementById("comp-porto").textContent = `${r.compPorto}/15`;
+            document.getElementById("comp-mapel").textContent = `${r.compMapel}/10`;
+
+            document.getElementById("career-total-pct").textContent = `${r.totalCareerPct}%`;
+            document.getElementById("career-status-label").textContent = r.careerStatus;
+
+            renderRadarSVG(r.dimScores);
+
+            const dimGrid = document.getElementById("dimensions-breakdown-grid");
+            dimGrid.innerHTML = r.dimScores.map(d => `
+                <div class="bg-slate-50 p-3.5 rounded-2xl border-2 border-inkDark flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="font-display font-bold text-xs sm:text-sm text-inkDark">${d.shortName}</span>
+                        <span class="font-display font-bold text-sm px-2 py-0.5 rounded-lg bg-white border border-inkDark">${d.pct}%</span>
+                    </div>
+                    <div class="w-full h-3 bg-slate-200 rounded-full border border-inkDark overflow-hidden">
+                        <div class="h-full rounded-full" style="width: ${d.pct}%; background-color: ${d.color};"></div>
+                    </div>
+                    <span class="text-[11px] text-slate-500 font-medium mt-1.5">${d.pct >= 80 ? 'Sangat Matang' : d.pct >= 65 ? 'Cukup Baik, Tingkatkan' : 'Prioritas Pengembangan BK'}</span>
+                </div>
+            `).join("");
+
+            const plansGrid = document.getElementById("plans-grid");
+            plansGrid.innerHTML = r.plans.map((pl, idx) => {
+                const bgColors = ["bg-indigo-50", "bg-sky-50", "bg-emerald-50"];
+                return `
+                    <div class="${bgColors[idx]} border-2 border-inkDark rounded-2xl p-4 flex flex-col justify-between space-y-2.5">
+                        <div>
+                            <div class="flex items-center justify-between gap-1 mb-1.5">
+                                <span class="bg-inkDark text-white font-display font-bold text-[10px] px-2.5 py-0.5 rounded-md">${pl.tag}</span>
+                                <span class="text-[10px] font-extrabold text-indigo-800">${pl.eco}</span>
+                            </div>
+                            <h4 class="font-display font-bold text-sm sm:text-base text-inkDark leading-snug">${pl.campus}</h4>
+                            <p class="text-xs font-bold text-slate-700 mt-0.5">Prodi: ${pl.prodi}</p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-300 space-y-1">
+                            <div class="text-[11px] font-extrabold text-emerald-800">Indikator Peluang: ${pl.chance}</div>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">${pl.note}</p>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+
+            const lowestDim = [...r.dimScores].sort((a, b) => a.pct - b.pct)[0];
+            document.getElementById("rep-conclusion-text").innerHTML = `
+                Berdasarkan hasil asesmen, <strong>${p.name} (${p.className})</strong> dengan rata-rata rapor Semester 1–3 sebesar <strong>${p.rapor.toFixed(2)}</strong> berada pada kategori kesiapan karir <strong>${r.careerStatus} (${r.totalCareerPct}%)</strong> dan estimasi rasionalisasi target utama sebesar <strong>${r.chancePct}%</strong>. Aspek <strong>${lowestDim.shortName} (${lowestDim.pct}%)</strong> direkomendasikan menjadi fokus utama penguatan bersama Guru BK.
+            `;
+
+            const actions = [
+                `Mengamankan grafik kenaikan rata-rata nilai rapor pada Semester 4 dan 5 terutama pada mata pelajaran pendukung (${p.subjects}).`,
+                p.ecosystem === "KEDINASAN"
+                    ? "Memulai latihan rutin Tes Kesamaptaan Jasmani (lari, push-up, sit-up) serta bedah soal SKD (TWK, TIU, TKP) minimal 3x seminggu."
+                    : p.ecosystem === "PTLN"
+                        ? "Menyusun jadwal persiapan sertifikasi bahasa resmi (IELTS min. 6.5 / TOEFL iBT) & skor SAT serta melengkapi esai motivasi."
+                        : "Mengikuti tryout UTBK-SNBT secara berkala sejak Kelas XI untuk memetakan skor Penalaran Umum, Literasi, dan Penalaran Matematika.",
+                `Menjadwalkan sesi konsultasi lanjutan dengan Guru BK (${p.counselor}) dengan membawa lembar hasil ini untuk memfinalisasi strategi pemilihan jurusan.`
+            ];
+            document.getElementById("rep-action-list").innerHTML = actions.map(a => `<li>${a}</li>`).join("");
+
+            document.getElementById("sign-counselor-name").textContent = p.counselor;
+            document.getElementById("sign-city-date").textContent = `Malang, ${formattedDate}`;
+            document.getElementById("sign-student-name").textContent = p.name;
+            document.getElementById("sign-student-class").textContent = `Kelas ${p.className}`;
+
+            updateSavedClassCountUI();
+        }
+
+        function renderRadarSVG(dimScores) {
+            const svg = document.getElementById("radar-svg");
+            if (!svg) return;
+            const cx = 160, cy = 130, maxR = 82;
+
+            const levels = [0.25, 0.5, 0.75, 1.0];
+            let gridPolys = levels.map(lvl => {
+                const r = maxR * lvl;
+                const pts = [
+                    `${cx},${cy - r}`,
+                    `${cx + r},${cy}`,
+                    `${cx},${cy + r}`,
+                    `${cx - r},${cy}`
+                ].join(" ");
+                return `<polygon points="${pts}" fill="none" stroke="#CBD5E1" stroke-width="1.5" />`;
+            }).join("");
+
+            const axes = `
+                <line x1="${cx}" y1="${cy - maxR}" x2="${cx}" y2="${cy + maxR}" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3" />
+                <line x1="${cx - maxR}" y1="${cy}" x2="${cx + maxR}" y2="${cy}" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3 3" />
+            `;
+
+            const s0 = (dimScores[0].pct / 100) * maxR;
+            const s1 = (dimScores[1].pct / 100) * maxR;
+            const s2 = (dimScores[2].pct / 100) * maxR;
+            const s3 = (dimScores[3].pct / 100) * maxR;
+
+            const dataPts = [
+                `${cx},${cy - s0}`,
+                `${cx + s1},${cy}`,
+                `${cx},${cy + s2}`,
+                `${cx - s3},${cy}`
+            ].join(" ");
+
+            const dataPoly = `
+                <polygon points="${dataPts}" fill="rgba(79, 70, 229, 0.28)" stroke="#4F46E5" stroke-width="3" />
+                <circle cx="${cx}" cy="${cy - s0}" r="5" fill="#4F46E5" stroke="#0F172A" stroke-width="1.5" />
+                <circle cx="${cx + s1}" cy="${cy}" r="5" fill="#10B981" stroke="#0F172A" stroke-width="1.5" />
+                <circle cx="${cx}" cy="${cy + s2}" r="5" fill="#F59E0B" stroke="#0F172A" stroke-width="1.5" />
+                <circle cx="${cx - s3}" cy="${cy}" r="5" fill="#FB7185" stroke="#0F172A" stroke-width="1.5" />
+            `;
+
+            const labels = `
+                <text x="${cx}" y="${cy - maxR - 14}" text-anchor="middle" font-size="11" font-weight="800" fill="#0F172A">Kenal Diri (${dimScores[0].pct}%)</text>
+                <text x="${cx + maxR + 8}" y="${cy + 4}" text-anchor="start" font-size="11" font-weight="800" fill="#0F172A">Akademik (${dimScores[1].pct}%)</text>
+                <text x="${cx}" y="${cy + maxR + 22}" text-anchor="middle" font-size="11" font-weight="800" fill="#0F172A">Literasi (${dimScores[2].pct}%)</text>
+                <text x="${cx - maxR - 8}" y="${cy + 4}" text-anchor="end" font-size="11" font-weight="800" fill="#0F172A">Strategi (${dimScores[3].pct}%)</text>
+            `;
+
+            svg.innerHTML = gridPolys + axes + dataPoly + labels;
+        }
+
+        // ==========================================
+        // 10. SISTEM EKSPOR & PENYIMPANAN FILE GURU BK (.DOC, .CSV, .PNG, PRINT)
+        // ==========================================
+        const CLASS_DB_STORAGE_KEY = "future_ready_xi_bk_database_v3";
+
+        function triggerSafeFileDownload(blob, filename) {
+            try {
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement("a");
+                link.style.display = "none";
+                link.href = url;
+                link.setAttribute("download", filename);
+                document.body.appendChild(link);
+                link.click();
+                setTimeout(() => {
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                }, 800);
+                return true;
+            } catch (err) {
+                console.error("Download error:", err);
+                return false;
+            }
+        }
+
+        function escapeHtmlText(str) {
+            return String(str || "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;");
+        }
+
+        function downloadGuruBKWordDoc() {
+            const p = appState.profile;
+            const r = appState.results;
+            if (!r) return;
+
+            const lowestDim = [...r.dimScores].sort((a, b) => a.pct - b.pct)[0];
+            const highestDim = [...r.dimScores].sort((a, b) => b.pct - a.pct)[0];
+            const achLabels = ["Belum ada", "Tingkat Sekolah", "Tingkat Kota/Kab", "Tingkat Provinsi", "Tingkat Nasional", "Internasional"];
+            const langLabels = ["Dasar", "Menengah", "Mahir (TOEFL >500)", "Sertifikat Resmi"];
+            const physLabels = ["Kendala Kesehatan", "Cukup Sehat", "Bugar & Rutin Olahraga", "Sangat Prima (Siap Samapta)"];
+
+            const satStr = p.satStatus === "CERTIFIED" && p.satScore !== null
+                ? `${p.satStatusLabel} (Skor: ${p.satScore}/1600)`
+                : p.satStatusLabel;
+            const risetStr = p.researchTitle
+                ? `${p.researchStatusLabel} — "${escapeHtmlText(p.researchTitle)}"`
+                : p.researchStatusLabel;
+
+            const wordHtml = `
+                <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+                <head><meta charset='utf-8'><title>Laporan Kesiapan Karir BK - ${escapeHtmlText(p.name)}</title>
+                <style>
+                    body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; color: #111827; line-height: 1.45; }
+                    .header { text-align: center; border-bottom: 3px double #0F172A; padding-bottom: 10px; margin-bottom: 14px; }
+                    .header h2 { margin: 0; font-size: 14pt; text-transform: uppercase; }
+                    .header h3 { margin: 2px 0; font-size: 12pt; color: #1E3A8A; }
+                    .header p { margin: 2px 0; font-size: 9.5pt; color: #4B5563; }
+                    table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+                    th, td { border: 1px solid #374151; padding: 6px 8px; font-size: 10pt; vertical-align: top; }
+                    th { background-color: #EEF2FF; font-weight: bold; text-align: left; }
+                    .sec-title { background-color: #0F172A; color: #FFFFFF; padding: 5px 10px; font-weight: bold; font-size: 10.5pt; margin-top: 12px; margin-bottom: 6px; }
+                    .summary-box { background-color: #FEF3C7; border: 1.5px solid #D97706; padding: 10px; margin-bottom: 10px; }
+                    .sign-table td { border: none; text-align: center; padding-top: 18px; }
+                </style>
+                </head>
+                <body>
+                    <div class="header">
+                        <h2>${escapeHtmlText(p.school).toUpperCase()}</h2>
+                        <h3>LAPORAN ASESMEN KESIAPAN KARIR & RASIONALISASI STUDI LANJUT KELAS XI</h3>
+                        <p>Kode Dokumen: ${r.docId} | Tanggal: ${r.dateStr} | Validitas Respon: ${r.consistencyScore}% Konsisten</p>
+                    </div>
+
+                    <div class="sec-title">I. IDENTITAS PESERTA DIDIK, REKAM NILAI RAPOR (SEM 1–3) & PORTOFOLIO</div>
+                    <table>
+                        <tr>
+                            <th width="24%">Nama Peserta Didik</th><td width="26%"><strong>${escapeHtmlText(p.name)}</strong></td>
+                            <th width="24%">Nilai Rapor Sem 1 (X Ganjil)</th><td width="26%">${p.sem1.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <th>Kelas / Peminatan</th><td>${escapeHtmlText(p.className)} (${escapeHtmlText(p.majorTrack)})</td>
+                            <th>Nilai Rapor Sem 2 (X Genap)</th><td>${p.sem2.toFixed(2)}</td>
+                        </tr>
+                        <tr>
+                            <th>Guru BK Pembimbing</th><td>${escapeHtmlText(p.counselor)}</td>
+                            <th>Nilai Rapor Sem 3 (XI Ganjil)</th><td><strong>${p.sem3.toFixed(2)}</strong></td>
+                        </tr>
+                        <tr>
+                            <th>Mapel Pendukung Utama</th><td>${escapeHtmlText(p.subjects)} (${p.subjectAvg.toFixed(2)})</td>
+                            <th>Rata-rata Sem 1–3 & Tren</th><td><strong>${p.rapor.toFixed(2)}</strong> (${p.raporTrendLabel}, Delta ${p.raporDelta >= 0 ? "+" : ""}${p.raporDelta.toFixed(2)})</td>
+                        </tr>
+                        <tr>
+                            <th>Prestasi & Bahasa Asing</th><td>${achLabels[p.achievement]} • ${langLabels[p.language - 1]}</td>
+                            <th>Kesiapan Fisik / Samapta</th><td>${physLabels[p.physical - 1] || "Cukup Sehat"}</td>
+                        </tr>
+                        <tr>
+                            <th>Sertifikat & Skor SAT</th><td><strong>${satStr}</strong></td>
+                            <th>Portofolio Riset / KIR</th><td><strong>${risetStr}</strong></td>
+                        </tr>
+                    </table>
+
+                    <div class="sec-title">II. HASIL RASIONALISASI TARGET UTAMA & PROFIL KESIAPAN KARIR</div>
+                    <table>
+                        <tr>
+                            <th width="28%">Target Utama (Plan A)</th>
+                            <td><strong>[${p.ecosystem}] ${escapeHtmlText(p.university)} — ${escapeHtmlText(p.prodi)}</strong> (${escapeHtmlText(p.uniPath)})</td>
+                        </tr>
+                        <tr>
+                            <th>Estimasi Peluang Rasional</th>
+                            <td><strong>${r.chancePct}% — ${r.zoneLabel}</strong> (Rapor ${r.compRapor}/40, Tren +${r.compTrend}/10, Karir ${r.compCareer}/25, Porto/SAT/Riset ${r.compPorto}/15, Mapel ${r.compMapel}/10)</td>
+                        </tr>
+                        <tr>
+                            <th>Indeks Kesiapan Karir</th>
+                            <td><strong>${r.totalCareerPct}% (${r.careerStatus})</strong> | Dimensi Terkuat: ${highestDim.shortName} (${highestDim.pct}%) | Prioritas Penguatan: ${lowestDim.shortName} (${lowestDim.pct}%)</td>
+                        </tr>
+                    </table>
+
+                    <div class="sec-title">III. MATRIKS REKOMENDASI STRATEGI (PLAN A, PLAN B, PLAN C)</div>
+                    <table>
+                        <tr>
+                            <th width="24%">Strategi</th>
+                            <th width="34%">Perguruan Tinggi & Program Studi</th>
+                            <th width="16%">Indikator</th>
+                            <th width="26%">Catatan Strategis BK</th>
+                        </tr>
+                        ${r.plans.map(pl => `
+                            <tr>
+                                <td><strong>${pl.tag}</strong><br/>(${pl.eco})</td>
+                                <td><strong>${escapeHtmlText(pl.campus)}</strong><br/>Prodi: ${escapeHtmlText(pl.prodi)}</td>
+                                <td><strong>${pl.chance}</strong></td>
+                                <td>${escapeHtmlText(pl.note)}</td>
+                            </tr>
+                        `).join("")}
+                    </table>
+
+                    <div class="summary-box">
+                        <strong>KESIMPULAN LAYANAN KONSELING KARIR:</strong><br/>
+                        Peserta didik atas nama <strong>${escapeHtmlText(p.name)} (${escapeHtmlText(p.className)})</strong> memiliki rata-rata nilai rapor Semester 1–3 sebesar <strong>${p.rapor.toFixed(2)}</strong> dengan indeks kesiapan karir <strong>${r.totalCareerPct}% (${r.careerStatus})</strong>. Disarankan menjaga konsistensi kenaikan nilai pada Semester 4–5 serta menjadwalkan tindak lanjut konseling individu bersama Guru BK untuk memantapkan strategi seleksi.
+                    </div>
+
+                    <table class="sign-table">
+                        <tr>
+                            <td width="50%">
+                                Mengetahui / Konselor Pendidikan,<br/>
+                                <strong>Guru Bimbingan dan Konseling</strong><br/><br/><br/><br/>
+                                <u><strong>${escapeHtmlText(p.counselor)}</strong></u><br/>
+                                NIP. ........................................
+                            </td>
+                            <td width="50%">
+                                Malang, ${r.dateStr}<br/>
+                                <strong>Peserta Didik Kelas XI</strong><br/><br/><br/><br/>
+                                <u><strong>${escapeHtmlText(p.name)}</strong></u><br/>
+                                Kelas ${escapeHtmlText(p.className)}
+                            </td>
+                        </tr>
+                    </table>
+                </body>
+                </html>
+            `;
+
+            const blob = new Blob(["\uFEFF", wordHtml], { type: "application/msword;charset=utf-8" });
+            const cleanName = p.name.replace(/[^a-zA-Z0-9]/g, "_");
+            const ok = triggerSafeFileDownload(blob, `Laporan_BK_Karir_${cleanName}_${p.className}.doc`);
+            if (ok) {
+                showToast("File Laporan Guru BK (.DOC) berhasil diunduh! Siap dibuka di Word.", "📄");
+            }
+        }
+
+        function buildStudentRecordObject() {
+            const p = appState.profile;
+            const r = appState.results;
+            return {
+                docId: r.docId,
+                tanggal: r.dateStr,
+                nama: p.name,
+                kelas: p.className,
+                peminatan: p.majorTrack,
+                sekolah: p.school,
+                guruBK: p.counselor,
+                sem1: p.sem1.toFixed(2),
+                sem2: p.sem2.toFixed(2),
+                sem3: p.sem3.toFixed(2),
+                rataRapor: p.rapor.toFixed(2),
+                deltaRapor: p.raporDelta.toFixed(2),
+                trenRapor: p.raporTrendLabel,
+                mapelPendukung: `${p.subjects} (${p.subjectAvg.toFixed(2)})`,
+                statusSAT: p.satStatusLabel,
+                skorSAT: p.satStatus === "CERTIFIED" && p.satScore !== null ? p.satScore : "-",
+                statusRiset: p.researchStatusLabel,
+                judulRiset: p.researchTitle ? p.researchTitle : "-",
+                ekosistem: p.ecosystem,
+                kampusTarget: p.university,
+                prodiTarget: p.prodi,
+                indeksKesiapan: r.totalCareerPct,
+                statusKesiapan: r.careerStatus,
+                konsistensi: r.consistencyScore,
+                dim1KenalDiri: r.dimScores[0].pct,
+                dim2Akademik: r.dimScores[1].pct,
+                dim3Literasi: r.dimScores[2].pct,
+                dim4Strategi: r.dimScores[3].pct,
+                peluangRasionalisasi: r.chancePct,
+                zonaRasionalisasi: r.zoneLabel
+            };
+        }
+
+        function getSavedClassRecords() {
+            try {
+                const raw = localStorage.getItem(CLASS_DB_STORAGE_KEY);
+                return raw ? JSON.parse(raw) : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function updateSavedClassCountUI() {
+            const list = getSavedClassRecords();
+            const badge = document.getElementById("saved-class-count");
+            if (badge) badge.textContent = `${list.length} Siswa`;
+        }
+
+        function saveStudentToClassDB() {
+            if (!appState.results) return;
+            try {
+                const list = getSavedClassRecords();
+                const rec = buildStudentRecordObject();
+                const existingIdx = list.findIndex(item => item.nama.toLowerCase() === rec.nama.toLowerCase() && item.kelas === rec.kelas);
+                if (existingIdx >= 0) {
+                    list[existingIdx] = rec;
+                } else {
+                    list.push(rec);
+                }
+                localStorage.setItem(CLASS_DB_STORAGE_KEY, JSON.stringify(list));
+                updateSavedClassCountUI();
+                showToast(`Data ${rec.nama} disimpan ke Arsip Kelas (${list.length} siswa)!`, "🗄️");
+            } catch (e) {
+                showToast("Browser membatasi penyimpanan lokal, silakan langsung klik Unduh Excel (.CSV) atau Laporan (.DOC).", "⚠️");
+            }
+        }
+
+        function openArchiveModal() {
+            const list = getSavedClassRecords();
+            const container = document.getElementById("archive-table-container");
+            if (list.length === 0) {
+                container.innerHTML = `<p class="text-slate-500 py-4 text-center font-semibold">Belum ada data siswa yang disimpan di Arsip Kelas. Klik tombol "➕ Simpan Siswa Ini ke Arsip Kelas" terlebih dahulu.</p>`;
+            } else {
+                container.innerHTML = `
+                    <table class="w-full border-collapse border border-inkDark text-left">
+                        <thead class="bg-slate-100">
+                            <tr>
+                                <th class="border border-inkDark p-2">No</th>
+                                <th class="border border-inkDark p-2">Nama Siswa</th>
+                                <th class="border border-inkDark p-2">Kelas</th>
+                                <th class="border border-inkDark p-2">Sem 1 / 2 / 3</th>
+                                <th class="border border-inkDark p-2">Rata-rata 1–3</th>
+                                <th class="border border-inkDark p-2">SAT & Riset</th>
+                                <th class="border border-inkDark p-2">Target Kampus</th>
+                                <th class="border border-inkDark p-2">Kesiapan</th>
+                                <th class="border border-inkDark p-2">Peluang</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${list.map((item, i) => `
+                                <tr>
+                                    <td class="border border-inkDark p-2">${i + 1}</td>
+                                    <td class="border border-inkDark p-2 font-bold">${escapeHtmlText(item.nama)}</td>
+                                    <td class="border border-inkDark p-2">${escapeHtmlText(item.kelas)}</td>
+                                    <td class="border border-inkDark p-2">${item.sem1} / ${item.sem2} / ${item.sem3}</td>
+                                    <td class="border border-inkDark p-2 font-bold text-electricIndigo">${item.rataRapor}</td>
+                                    <td class="border border-inkDark p-2">SAT: ${item.skorSAT} | Riset: ${escapeHtmlText(item.statusRiset)}</td>
+                                    <td class="border border-inkDark p-2">[${item.ekosistem}] ${escapeHtmlText(item.kampusTarget)} - ${escapeHtmlText(item.prodiTarget)}</td>
+                                    <td class="border border-inkDark p-2">${item.indeksKesiapan}%</td>
+                                    <td class="border border-inkDark p-2 font-bold">${item.peluangRasionalisasi}%</td>
+                                </tr>
+                            `).join("")}
+                        </tbody>
+                    </table>
+                `;
+            }
+            document.getElementById("archive-modal").classList.remove("hidden");
+        }
+
+        function closeArchiveModal() {
+            document.getElementById("archive-modal").classList.add("hidden");
+        }
+
+        function clearClassDB() {
+            try {
+                localStorage.removeItem(CLASS_DB_STORAGE_KEY);
+                updateSavedClassCountUI();
+                showToast("Arsip kelas berhasil dikosongkan.", "🗑️");
+            } catch (e) {
+                // Ignore
+            }
+        }
+
+        function downloadRecapCSV(isBulk) {
+            if (!appState.results) return;
+            let records = [];
+
+            if (isBulk) {
+                records = getSavedClassRecords();
+                if (records.length === 0) {
+                    records = [buildStudentRecordObject()];
+                    showToast("Arsip kelas masih kosong; mengunduh data siswa aktif saat ini.", "ℹ️");
+                }
+            } else {
+                records = [buildStudentRecordObject()];
+            }
+
+            const headers = [
+                "Kode_Dokumen", "Tanggal", "Nama_Siswa", "Kelas", "Peminatan", "Sekolah", "Guru_BK",
+                "Sem_1", "Sem_2", "Sem_3", "Rata_Rata_Sem_1_3", "Delta_Sem3_Sem1", "Tren_Rapor",
+                "Mapel_Pendukung", "Status_SAT", "Skor_SAT", "Status_Riset", "Judul_Riset",
+                "Ekosistem_Target", "Kampus_Target", "Program_Studi",
+                "Indeks_Kesiapan_Karir_Pct", "Status_Kesiapan", "Validitas_Konsistensi_Pct",
+                "Dim1_Kenal_Diri", "Dim2_Akademik", "Dim3_Literasi", "Dim4_Strategi",
+                "Peluang_Rasionalisasi_Pct", "Zona_Rasionalisasi"
+            ];
+
+            const rows = records.map(rec => [
+                `"${rec.docId}"`, `"${rec.tanggal}"`, `"${rec.nama.replace(/"/g, '""')}"`, `"${rec.kelas}"`, `"${rec.peminatan}"`,
+                `"${rec.sekolah.replace(/"/g, '""')}"`, `"${rec.guruBK.replace(/"/g, '""')}"`, rec.sem1, rec.sem2, rec.sem3, rec.rataRapor, rec.deltaRapor,
+                `"${rec.trenRapor}"`, `"${rec.mapelPendukung}"`,
+                `"${(rec.statusSAT || "Belum Memiliki / Belum Tes").replace(/"/g, '""')}"`,
+                `"${rec.skorSAT !== undefined ? rec.skorSAT : "-"}"`,
+                `"${(rec.statusRiset || "Belum Ada Riset").replace(/"/g, '""')}"`,
+                `"${(rec.judulRiset || "-").replace(/"/g, '""')}"`,
+                `"${rec.ekosistem}"`, `"${rec.kampusTarget.replace(/"/g, '""')}"`,
+                `"${rec.prodiTarget.replace(/"/g, '""')}"`, rec.indeksKesiapan, `"${rec.statusKesiapan}"`, rec.konsistensi,
+                rec.dim1KenalDiri, rec.dim2Akademik, rec.dim3Literasi, rec.dim4Strategi,
+                rec.peluangRasionalisasi, `"${rec.zonaRasionalisasi}"`
+            ].join(";"));
+
+            const csvContent = "\uFEFF" + headers.join(";") + "\r\n" + rows.join("\r\n");
+            const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            const cleanName = isBulk ? `Rekap_Massal_Kelas_${appState.profile.className}` : `${appState.profile.name.replace(/[^a-zA-Z0-9]/g, "_")}_${appState.profile.className}`;
+            const ok = triggerSafeFileDownload(blob, `Database_BK_Karir_${cleanName}.csv`);
+            if (ok) {
+                showToast(isBulk ? `Rekap Excel (${records.length} siswa) berhasil diunduh!` : "Data Excel (.CSV) siswa berhasil diunduh!", "📊");
+            }
+        }
+
+        function copyReportToClipboard() {
+            const p = appState.profile;
+            const r = appState.results;
+            if (!r) return;
+
+            const satSummaryLine = p.satStatus === "CERTIFIED" && p.satScore !== null
+                ? `${p.satStatusLabel} (Skor: ${p.satScore}/1600)`
+                : p.satStatusLabel;
+            const researchSummaryLine = p.researchTitle
+                ? `${p.researchStatusLabel} — "${p.researchTitle}"`
+                : p.researchStatusLabel;
+
+            const summaryText = [
+                `=== LAPORAN KESIAPAN KARIR & RASIONALISASI STUDI LANJUT (BK KELAS XI) ===`,
+                `Sekolah: ${p.school} | Guru BK: ${p.counselor}`,
+                `Nama Siswa: ${p.name} (${p.className} - ${p.majorTrack})`,
+                `Nilai Rapor: Sem 1 = ${p.sem1.toFixed(2)} | Sem 2 = ${p.sem2.toFixed(2)} | Sem 3 = ${p.sem3.toFixed(2)}`,
+                `Rata-rata Kumulatif (Sem 1–3): ${p.rapor.toFixed(2)} | Tren: ${p.raporTrendLabel} (${p.raporDelta >= 0 ? "+" : ""}${p.raporDelta.toFixed(2)})`,
+                `Sertifikat SAT: ${satSummaryLine}`,
+                `Portofolio Riset: ${researchSummaryLine}`,
+                `-----------------------------------------------------------------------`,
+                `TARGET UTAMA (PLAN A): [${p.ecosystem}] ${p.university} - ${p.prodi}`,
+                `ESTIMASI PELUANG RASIONAL: ${r.chancePct}% (${r.zoneLabel})`,
+                `INDEKS KESIAPAN KARIR: ${r.totalCareerPct}% (${r.careerStatus}) | Konsistensi: ${r.consistencyScore}%`,
+                `- Pemahaman Diri: ${r.dimScores[0].pct}%`,
+                `- Kesiapan Akademik: ${r.dimScores[1].pct}%`,
+                `- Literasi Seleksi: ${r.dimScores[2].pct}%`,
+                `- Strategi & Keputusan: ${r.dimScores[3].pct}%`,
+                `-----------------------------------------------------------------------`,
+                `ALTERNATIF STRATEGI:`,
+                `1. ${r.plans[0].tag}: ${r.plans[0].campus} (${r.plans[0].prodi}) -> ${r.plans[0].chance}`,
+                `2. ${r.plans[1].tag}: ${r.plans[1].campus} (${r.plans[1].prodi}) -> ${r.plans[1].chance}`,
+                `3. ${r.plans[2].tag}: ${r.plans[2].campus} (${r.plans[2].prodi}) -> ${r.plans[2].chance}`
+            ].join("\n");
+
+            const tempArea = document.createElement("textarea");
+            tempArea.value = summaryText;
+            tempArea.style.position = "fixed";
+            tempArea.style.opacity = "0";
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            try {
+                document.execCommand("copy");
+                showToast("Ringkasan laporan berhasil disalin ke Clipboard!", "📋");
+            } catch (err) {
+                showToast("Gagal menyalin otomatis, silakan unduh file .DOC atau .CSV.", "⚠️");
+            }
+            document.body.removeChild(tempArea);
+        }
+
+        function openPrintPreviewModal() {
+            document.getElementById("print-preview-modal").classList.remove("hidden");
+        }
+
+        function closePrintPreviewModal() {
+            document.getElementById("print-preview-modal").classList.add("hidden");
+        }
+
+        function triggerSafePrint() {
+            closePrintPreviewModal();
+            setTimeout(() => {
+                window.print();
+            }, 250);
+        }
+
+        function downloadSummaryCardPNG() {
+            const p = appState.profile;
+            const r = appState.results;
+            if (!r) return;
+            const canvas = document.getElementById("summary-png-canvas");
+            const ctx = canvas.getContext("2d");
+            const W = canvas.width, H = canvas.height;
+
+            ctx.fillStyle = "#4F46E5";
+            ctx.fillRect(0, 0, W, H);
+
+            ctx.fillStyle = "rgba(255,255,255,0.12)";
+            for (let x = 40; x < W; x += 40) {
+                for (let y = 40; y < H; y += 40) {
+                    ctx.beginPath();
+                    ctx.arc(x, y, 3, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            ctx.fillStyle = "#FFFFFF";
+            ctx.beginPath();
+            ctx.roundRect(65, 70, W - 130, H - 140, 36);
+            ctx.fill();
+            ctx.strokeStyle = "#0F172A";
+            ctx.lineWidth = 8;
+            ctx.stroke();
+
+            ctx.fillStyle = "#BEF264";
+            ctx.beginPath();
+            ctx.roundRect(110, 118, 430, 48, 24);
+            ctx.fill();
+            ctx.strokeStyle = "#0F172A";
+            ctx.lineWidth = 4;
+            ctx.stroke();
+
+            ctx.fillStyle = "#0F172A";
+            ctx.font = '800 20px "Plus Jakarta Sans", sans-serif';
+            ctx.textAlign = "left";
+            ctx.fillText("🎯 FUTURE-READY XI • RADAR KARIR", 136, 149);
+
+            ctx.font = '800 44px "Space Grotesk", sans-serif';
+            ctx.fillText(p.name, 110, 228);
+
+            ctx.fillStyle = "#475569";
+            ctx.font = '700 22px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText(`Kelas ${p.className} • ${p.school}`, 110, 266);
+
+            ctx.fillStyle = "#EEF2FF";
+            ctx.beginPath();
+            ctx.roundRect(110, 295, W - 220, 82, 18);
+            ctx.fill();
+            ctx.strokeStyle = "#0F172A";
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            ctx.fillStyle = "#1E1B4B";
+            ctx.font = '800 19px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText(`RAPOR: Sem 1 (${p.sem1.toFixed(2)}) → Sem 2 (${p.sem2.toFixed(2)}) → Sem 3 (${p.sem3.toFixed(2)})  |  Rata-rata: ${p.rapor.toFixed(2)}`, 132, 332);
+
+            const satPngText = p.satStatus === "CERTIFIED" && p.satScore !== null ? `SAT: ${p.satScore}/1600` : `SAT: ${p.satStatus === "PREP" ? "Persiapan" : "Belum"}`;
+            const risetPngText = p.researchTitle
+                ? `Riset: ${p.researchTitle.length > 42 ? p.researchTitle.slice(0, 42) + "..." : p.researchTitle}`
+                : `Riset: ${p.researchStatusLabel}`;
+            ctx.fillStyle = "#3730A3";
+            ctx.font = '700 16px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText(`${satPngText}  •  ${risetPngText}`, 132, 362);
+
+            ctx.fillStyle = "#F8FAFC";
+            ctx.beginPath();
+            ctx.roundRect(110, 400, W - 220, 195, 24);
+            ctx.fill();
+            ctx.strokeStyle = "#0F172A";
+            ctx.lineWidth = 4;
+            ctx.stroke();
+
+            ctx.fillStyle = "#4F46E5";
+            ctx.font = '800 66px "Space Grotesk", sans-serif';
+            ctx.fillText(`${r.totalCareerPct}%`, 150, 498);
+            ctx.fillStyle = "#0F172A";
+            ctx.font = '700 19px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText("INDEKS KESIAPAN KARIR", 150, 538);
+
+            ctx.fillStyle = r.zone === "HIJAU" ? "#059669" : r.zone === "KUNING" ? "#D97706" : "#E11D48";
+            ctx.font = '800 66px "Space Grotesk", sans-serif';
+            ctx.fillText(`${r.chancePct}%`, 560, 498);
+            ctx.fillStyle = "#0F172A";
+            ctx.font = '700 19px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText(`PELUANG ${p.ecosystem} (ZONA ${r.zone})`, 560, 538);
+
+            ctx.fillStyle = "#FEF3C7";
+            ctx.beginPath();
+            ctx.roundRect(110, 620, W - 220, 138, 24);
+            ctx.fill();
+            ctx.strokeStyle = "#0F172A";
+            ctx.lineWidth = 4;
+            ctx.stroke();
+
+            ctx.fillStyle = "#92400E";
+            ctx.font = '800 18px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText(`TARGET PLAN A (${p.ecosystem}) • TREN: ${p.raporTrendLabel.toUpperCase()}`, 145, 660);
+
+            ctx.fillStyle = "#0F172A";
+            ctx.font = '800 30px "Space Grotesk", sans-serif';
+            ctx.fillText(`${p.university}`, 145, 702);
+            ctx.font = '700 23px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText(`Prodi: ${p.prodi}`, 145, 738);
+
+            let barY = 808;
+            r.dimScores.forEach(d => {
+                ctx.fillStyle = "#0F172A";
+                ctx.font = '700 21px "Plus Jakarta Sans", sans-serif';
+                ctx.fillText(`${d.shortName}`, 110, barY);
+                ctx.textAlign = "right";
+                ctx.fillText(`${d.pct}%`, W - 110, barY);
+                ctx.textAlign = "left";
+
+                ctx.fillStyle = "#E2E8F0";
+                ctx.beginPath();
+                ctx.roundRect(110, barY + 12, W - 220, 22, 11);
+                ctx.fill();
+
+                ctx.fillStyle = d.color;
+                ctx.beginPath();
+                ctx.roundRect(110, barY + 12, ((W - 220) * d.pct) / 100, 22, 11);
+                ctx.fill();
+
+                barY += 78;
+            });
+
+            ctx.fillStyle = "#64748B";
+            ctx.font = '600 19px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText(`Diverifikasi Layanan BK (${p.counselor}) • ${r.dateStr}`, 110, H - 108);
+
+            canvas.toBlob((blob) => {
+                const cleanName = p.name.replace(/[^a-zA-Z0-9]/g, "_");
+                if (blob && triggerSafeFileDownload(blob, `Kartu_Kesiapan_Karir_${cleanName}_${p.className}.png`)) {
+                    showToast("Kartu Ringkasan Karir (PNG) berhasil diunduh!", "🖼️");
+                }
+            }, "image/png", 1.0);
+        }
+
+        function resetToStart() {
+            appState.answers = new Array(24).fill(null);
+            appState.currentDimIndex = 0;
+            document.getElementById("step-3-section").classList.add("hidden");
+            document.getElementById("step-2-section").classList.add("hidden");
+            document.getElementById("step-1-section").classList.remove("hidden");
+            updateNavStepper(1);
+            updateRaporAnalytics();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        // ==========================================
+        // 11. INISIALISASI SAAT HALAMAN DIMUAT
+        // ==========================================
+        function initApplication() {
+            selectEcosystem("PTN");
+            handleClusterChange();
+            handleSatStatusChange();
+            handleResearchStatusChange();
+            updateRaporAnalytics();
+            updateSavedClassCountUI();
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initApplication);
+        } else {
+            initApplication();
+        }
+    </script>
+</body>
+</html>
